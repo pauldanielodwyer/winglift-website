@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WingLift — AI Visibility Audit</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -849,17 +854,68 @@ footer {
 .footer-links a { color: rgba(255,255,255,0.4); font-size: 0.82rem; text-decoration: none; transition: color 0.15s; }
 .footer-links a:hover { color: rgba(255,255,255,0.8); }
 .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-.footer-social { display: flex; gap: 12px; align-items: center; }
+.footer-social { display: flex; gap: 10px; align-items: center; }
 .footer-social a {
   display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.5);
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
-.footer-social a:hover { border-color: var(--gold); color: var(--gold); background: rgba(227,167,47,0.08); }
+.footer-social a:hover { background: var(--gold); color: var(--navy); }
+.footer-legal {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+.footer-legal a { color: rgba(255,255,255,0.4); text-decoration: underline; }
+.footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+/* ── COOKIE BANNER ── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 9999;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+}
+#cookie-banner a { color: var(--gold); text-decoration: underline; }
+.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.btn-cookie-accept {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+}
+.btn-cookie-decline {
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+}
+.btn-cookie-decline:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
 
 /* ── MOBILE ── */
 @media (max-width: 800px) {
@@ -1281,20 +1337,30 @@ footer {
     <div class="footer-social">
       <!-- Facebook -->
       <a href="https://facebook.com/winglift" target="_blank" rel="noopener" aria-label="WingLift on Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
       <!-- Instagram -->
       <a href="https://instagram.com/winglift" target="_blank" rel="noopener" aria-label="WingLift on Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
       <!-- LinkedIn -->
       <a href="https://linkedin.com/company/winglift" target="_blank" rel="noopener" aria-label="WingLift on LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
     </div>
     <p class="footer-copy">© 2026 WingLift · Built in Dublin · Serving EU &amp; UK</p>
+    <p class="footer-legal">WingLift is a trading name of LiftWing Ltd, registered in Ireland. · <a href="#privacy">Privacy Policy</a> · <a href="#cookies">Cookie Policy</a></p>
   </div>
 </footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <span>We use essential cookies to keep the site working. With your permission we'd also like to set analytics cookies to understand how you use WingLift. See our <a href="#privacy">Cookie &amp; Privacy Policy</a>.</span>
+  <div class="cookie-actions">
+    <button class="btn-cookie-accept" onclick="acceptCookies()">Accept all</button>
+    <button class="btn-cookie-decline" onclick="declineCookies()">Essential only</button>
+  </div>
+</div>
 
 <script>
 function handleSignup(inputId, confirmId, formId) {
@@ -1327,4 +1393,21 @@ try {
     document.getElementById('heroConfirm').style.display = 'block';
   }
 } catch(e) {}
+
+// Cookie consent
+function acceptCookies() {
+  try { localStorage.setItem('wl_cookies', 'accepted'); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+function declineCookies() {
+  try { localStorage.setItem('wl_cookies', 'essential'); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+try {
+  if (localStorage.getItem('wl_cookies')) {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+} catch(e) {}
 </script>
+</body>
+</html>
