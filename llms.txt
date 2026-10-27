@@ -1,0 +1,50 @@
+# WingLift
+
+> WingLift helps small and medium businesses across the EU and UK find out what AI systems (ChatGPT, Claude, Gemini) say about them — and provides plain-English fixes to improve their AI visibility.
+
+WingLift's core product is **Wren**, an AI Visibility Audit tool. In under 60 seconds, Wren checks three leading AI systems to see whether a business is mentioned, whether the information is accurate, and how it compares to competitors. Users receive a short, prioritised list of fixes — no jargon, no 400-page reports.
+
+## Who it's for
+
+- Small and medium businesses in the EU and United Kingdom
+- Business owners who want to be found when customers ask AI systems for recommendations
+- Anyone who wants to understand and improve their "GEO" (Generative Engine Optimisation) presence
+
+## Plans
+
+- **Free**: Run a single audit — no account, no credit card required. See whether each AI mentions you, your headline finding, and a few quick tips.
+- **Standard** (€29/month): Full competitor analysis, cross-AI comparison, sources and evidence, audit history, weekly re-runs, and targeted fix lists.
+- Early adopters receive 10% off Standard for the first 3 months (€26.10/mo).
+
+## Key facts
+
+- Company: Shape Size or Form Ltd, trading as WingLift. Registered in Ireland.
+- Founded: Dublin, Ireland.
+- Serves: EU and United Kingdom.
+- Data residency: European servers only. GDPR compliant for both EU and UK clients.
+- Contact: hello@winglift.io
+- Website: https://winglift.io/
+
+## What is AI Visibility?
+
+When someone asks ChatGPT, Claude or Gemini "best accountant near me" or "who does kitchen renovations in Cork?", they get an AI-generated answer. AI Visibility is whether your business appears in those answers — and what the AI says about you. This is separate from traditional Google SEO.
+
+## What is GEO (Generative Engine Optimisation)?
+
+GEO is the practice of optimising your business's online presence so AI systems can find, understand and recommend you. Key signals include: complete and accurate Google Business Profile, structured data (schema markup) on your website, consistent NAP (name, address, phone) across directories, customer reviews, and clear descriptive content on your website.
+
+## Articles
+
+- What is AI Visibility — and why it matters more than Google rank (October 2026)
+- 5 things you can do today to get your business mentioned by ChatGPT (October 2026)
+- We audited 50 SMEs across the EU against three AI systems — here's what we found (September 2026)
+- How to improve your business's position on ChatGPT and Claude (October 2026)
+
+## Links
+
+- Homepage: https://winglift.io/
+- Privacy & Cookie Policy: https://winglift.io/privacy.html
+- Enterprise: https://irishaiconsultancy.ie
+- Facebook: https://facebook.com/winglift
+- Instagram: https://instagram.com/winglift
+- LinkedIn: https://linkedin.com/company/winglift
