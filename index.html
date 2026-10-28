@@ -49,7 +49,7 @@
     {
       "@type": "Offer",
       "name": "Standard",
-      "price": "29",
+      "price": "29.99",
       "priceCurrency": "EUR",
       "billingDuration": "P1M"
     }
@@ -732,6 +732,10 @@ h2 {
   border-radius: 20px;
   white-space: nowrap;
 }
+.pricing-toggle { display: flex; gap: 8px; justify-content: center; margin-bottom: 28px; }
+.toggle-btn { padding: 8px 20px; border-radius: 20px; border: 1.5px solid var(--border); background: transparent; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--fg-soft); cursor: pointer; transition: all 0.2s; }
+.toggle-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.toggle-save { font-size: 0.75rem; font-weight: 700; color: var(--gold-dk); margin-left: 4px; }
 .price-tier { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
 .price-amount {
   font-family: 'Manrope', sans-serif;
@@ -1145,7 +1149,7 @@ footer {
         <span class="proof-label">First audit, no sign-up needed</span>
       </div>
       <div class="proof-item">
-        <span class="proof-num">€29</span>
+        <span class="proof-num">€29.99</span>
         <span class="proof-label">/mo - not €99, not €299</span>
       </div>
     </div>
@@ -1326,8 +1330,12 @@ footer {
 <section id="pricing">
   <div class="container">
     <span class="section-eyebrow">Pricing</span>
-    <h2>€29 a month. No enterprise contract. No agency.</h2>
+    <h2>€29.99 a month. No enterprise contract. No agency.</h2>
     <p class="section-sub">Similar tools built for marketing teams start at €99-€400/mo. Wren is built for the business owner who wants straightforward answers at a price that makes sense.</p>
+    <div class="pricing-toggle">
+      <button class="toggle-btn active" id="toggleMonthly" onclick="setPricingPeriod('monthly')">Monthly</button>
+      <button class="toggle-btn" id="toggleAnnual" onclick="setPricingPeriod('annual')">Annual <span class="toggle-save">2 months free</span></button>
+    </div>
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-tier">Free</div>
@@ -1347,9 +1355,10 @@ footer {
       <div class="price-card featured">
         <div class="price-featured-tag">Most popular</div>
         <div class="price-tier">Standard</div>
-        <div class="price-amount"><sup>€</sup>29</div>
-        <div class="price-period">per month</div>
-        <div class="price-early">Early adopter: €26.10/mo for first 3 months</div>
+        <div class="price-amount"><sup>€</sup><span id="priceAmount">29.99</span></div>
+        <div class="price-period" id="pricePeriod">per month</div>
+        <div class="price-early" id="priceAnnualNote" style="display:none">€299.90 billed annually · 2 months free</div>
+        <div class="price-early" id="priceFounder">Founding Member: locked in for life at this price</div>
         <ul class="price-features">
           <li>Everything in Free</li>
           <li>Full competitor rankings &amp; comparison, including why they're winning</li>
@@ -1632,6 +1641,32 @@ function closePrivacy() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePrivacy(); });
+
+function setPricingPeriod(period) {
+  const amount = document.getElementById('priceAmount');
+  const pricePeriod = document.getElementById('pricePeriod');
+  const annualNote = document.getElementById('priceAnnualNote');
+  const monthlyBtn = document.getElementById('toggleMonthly');
+  const annualBtn = document.getElementById('toggleAnnual');
+  if (period === 'annual') {
+    amount.innerHTML = '24<sup style="font-size:0.55em;vertical-align:super">.99</sup>';
+    pricePeriod.textContent = 'per month, billed annually';
+    annualNote.style.display = 'block';
+    monthlyBtn.classList.remove('active');
+    annualBtn.classList.add('active');
+  } else {
+    amount.innerHTML = '29<sup style="font-size:0.55em;vertical-align:super">.99</sup>';
+    pricePeriod.textContent = 'per month';
+    annualNote.style.display = 'none';
+    monthlyBtn.classList.add('active');
+    annualBtn.classList.remove('active');
+  }
+}
+// Init monthly display with small .99
+document.addEventListener('DOMContentLoaded', function() {
+  var el = document.getElementById('priceAmount');
+  if (el) el.innerHTML = '29<sup style="font-size:0.55em;vertical-align:super">.99</sup>';
+});
 
 function handleSignup(inputId, confirmId, formId, consentId) {
   const input = document.getElementById(inputId);
