@@ -356,8 +356,8 @@ h1 span { color: var(--gold); }
 .consent-label {
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 6px;
   font-size: 0.82rem;
   color: var(--fg-soft);
   cursor: pointer;
@@ -366,10 +366,14 @@ h1 span { color: var(--gold); }
 }
 .consent-label input[type="checkbox"] {
   flex-shrink: 0;
+  margin-top: 1px;
   accent-color: var(--gold);
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   cursor: pointer;
+}
+.consent-label span {
+  display: inline;
 }
 .consent-label a { color: var(--navy); }
 .consent-label-dark { color: rgba(255,255,255,0.7); }
@@ -1118,7 +1122,7 @@ footer {
       <button class="btn-gold" onclick="handleSignup('heroEmail','heroConfirm','heroForm','heroConsent')">Get early access</button>
       <label class="consent-label">
         <input type="checkbox" id="heroConsent">
-        Yes, send my 10% discount and occasional news from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+        <span>Yes, send my 10% discount and occasional news from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
       </label>
     </div>
     <div class="signup-confirm" id="heroConfirm">
@@ -1457,7 +1461,7 @@ footer {
       <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm','ctaConsent')">Claim my spot</button>
       <label class="consent-label consent-label-dark">
         <input type="checkbox" id="ctaConsent">
-        Yes, send my 10% discount and occasional news from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+        <span>Yes, send my 10% discount and occasional news from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
       </label>
     </div>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
