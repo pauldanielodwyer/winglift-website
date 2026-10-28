@@ -354,8 +354,7 @@ h1 span { color: var(--gold); }
 .btn-gold:hover { background: var(--gold-dk); transform: translateY(-1px); }
 
 .consent-label {
-  width: 100%;
-  display: flex;
+  display: inline-flex;
   align-items: flex-start;
   gap: 6px;
   font-size: 0.82rem;
@@ -363,10 +362,11 @@ h1 span { color: var(--gold); }
   cursor: pointer;
   text-align: left;
   line-height: 1.4;
+  max-width: 340px;
 }
 .consent-label input[type="checkbox"] {
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 2px;
   accent-color: var(--gold);
   width: 13px;
   height: 13px;
@@ -1126,7 +1126,7 @@ footer {
       </label>
     </div>
     <div class="signup-confirm" id="heroConfirm">
-      ✓ You're on the list — we'll be in touch before launch with your Founding Member details.
+      ✓ You're on the list. We'll be in touch before launch with your Founding Member details.
     </div>
     <p class="signup-note">Free to try · No credit card · <strong>Run a live audit on your own business before you commit to anything</strong></p>
 
@@ -1455,7 +1455,7 @@ footer {
     <span class="section-eyebrow" style="color:rgba(227,167,47,0.8)">Only 100 Founding Member spots</span>
     <h2>Find out what AI says about your business - before your customers do</h2>
     <p>Start with a free audit - no account, no card required. Run a live example on your own company and see exactly what ChatGPT, Claude and Gemini say about you, before you commit to anything.</p>
-    <p style="margin-top: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.75);">Be one of the first 100 and get <strong style="color:#E3A72F">Founding Member status</strong> — priority support, early access to every new feature, and a direct line to the team. Reserved for early signups only.</p>
+    <p style="margin-top: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.75);">Be one of the first 100 and get <strong style="color:#E3A72F">Founding Member status</strong>: priority support, early access to every new feature, and a direct line to the team. Reserved for early signups only.</p>
     <div class="cta-signup" id="ctaForm">
       <input type="email" id="ctaEmail" placeholder="your@email.com" autocomplete="email">
       <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm','ctaConsent')">Claim my spot</button>
@@ -1465,7 +1465,7 @@ footer {
       </label>
     </div>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
-    <p class="cta-note">No spam. Unsubscribe any time. Founding Member status is <strong>guaranteed for the first 100 signups</strong> — spots are limited.</p>
+    <p class="cta-note">No spam. Unsubscribe any time. Founding Member status is <strong>guaranteed for the first 100 signups</strong>. Spots are limited.</p>
   </div>
 </section>
 
