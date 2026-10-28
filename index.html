@@ -356,16 +356,15 @@ h1 span { color: var(--gold); }
 .consent-label {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   font-size: 0.82rem;
   color: var(--fg-soft);
   cursor: pointer;
   text-align: left;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 .consent-label input[type="checkbox"] {
-  margin-top: 2px;
   flex-shrink: 0;
   accent-color: var(--gold);
   width: 15px;
@@ -1119,7 +1118,7 @@ footer {
       <button class="btn-gold" onclick="handleSignup('heroEmail','heroConfirm','heroForm','heroConsent')">Get early access</button>
       <label class="consent-label">
         <input type="checkbox" id="heroConsent">
-        I agree to receive launch updates and my 10% discount code from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+        Yes, keep me updated on WingLift's launch and send my 10% discount. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
       </label>
     </div>
     <div class="signup-confirm" id="heroConfirm">
@@ -1458,7 +1457,7 @@ footer {
       <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm','ctaConsent')">Claim my spot</button>
       <label class="consent-label consent-label-dark">
         <input type="checkbox" id="ctaConsent">
-        I agree to receive launch updates and my 10% discount code from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+        Yes, keep me updated on WingLift's launch and send my 10% discount. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
       </label>
     </div>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
