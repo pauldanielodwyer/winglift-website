@@ -353,6 +353,30 @@ h1 span { color: var(--gold); }
 }
 .btn-gold:hover { background: var(--gold-dk); transform: translateY(-1px); }
 
+.consent-label {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--fg-soft);
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;
+}
+.consent-label input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--gold);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.consent-label a { color: var(--navy); }
+.consent-label-dark { color: rgba(255,255,255,0.7); }
+.consent-label-dark a { color: rgba(255,255,255,0.9); }
+.consent-error { color: #E36B4A; font-size: 0.82rem; margin-top: 4px; display: none; }
+
 .signup-note {
   font-size: 0.8rem;
   color: var(--muted);
@@ -1092,7 +1116,11 @@ footer {
 
     <div class="signup-box" id="heroForm">
       <input type="email" id="heroEmail" placeholder="Your business email" autocomplete="email">
-      <button class="btn-gold" onclick="handleSignup('heroEmail','heroConfirm','heroForm')">Get early access</button>
+      <button class="btn-gold" onclick="handleSignup('heroEmail','heroConfirm','heroForm','heroConsent')">Get early access</button>
+      <label class="consent-label">
+        <input type="checkbox" id="heroConsent">
+        I agree to receive launch updates and my 10% discount code from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+      </label>
     </div>
     <div class="signup-confirm" id="heroConfirm">
       ✓ You're on the list - we'll be in touch before launch with your 10% discount.
@@ -1427,7 +1455,11 @@ footer {
     <p style="margin-top: 10px; font-size: 0.95rem; color: rgba(255,255,255,0.75);">Join the early access list and lock in <strong style="color:#E3A72F">10% off Standard</strong> for your first 3 months. Guaranteed for everyone who signs up before launch.</p>
     <div class="cta-signup" id="ctaForm">
       <input type="email" id="ctaEmail" placeholder="your@email.com" autocomplete="email">
-      <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm')">Claim my spot</button>
+      <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm','ctaConsent')">Claim my spot</button>
+      <label class="consent-label consent-label-dark">
+        <input type="checkbox" id="ctaConsent">
+        I agree to receive launch updates and my 10% discount code from WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.
+      </label>
     </div>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
     <p class="cta-note">No spam. Unsubscribe any time. Your <strong>10% discount is guaranteed</strong> for everyone who signs up before launch.</p>
@@ -1593,14 +1625,21 @@ function closePrivacy() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePrivacy(); });
 
-function handleSignup(inputId, confirmId, formId) {
+function handleSignup(inputId, confirmId, formId, consentId) {
   const input = document.getElementById(inputId);
   const confirm = document.getElementById(confirmId);
   const form = document.getElementById(formId);
+  const consent = consentId ? document.getElementById(consentId) : null;
+
   if (!input.value || !input.value.includes('@')) {
     input.focus();
     input.style.borderColor = '#E36B4A';
     setTimeout(() => { input.style.borderColor = ''; }, 1500);
+    return;
+  }
+  if (consent && !consent.checked) {
+    consent.parentElement.style.color = '#E36B4A';
+    setTimeout(() => { consent.parentElement.style.color = ''; }, 2000);
     return;
   }
   const email = input.value.trim();
