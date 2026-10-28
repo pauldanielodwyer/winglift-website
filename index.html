@@ -1128,7 +1128,7 @@ footer {
     </div>
     <label class="consent-label">
       <input type="checkbox" id="heroConsent">
-      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
+      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a> &middot; <a href="#" onclick="openFounderTerms();return false;">Founding Member Terms</a>.</span>
     </label>
     <div class="signup-confirm" id="heroConfirm">
       ✓ You're on the list. We'll be in touch before launch with your Founding Member details.
@@ -1472,7 +1472,7 @@ footer {
     </div>
     <label class="consent-label consent-label-dark">
       <input type="checkbox" id="ctaConsent">
-      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
+      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a> &middot; <a href="#" onclick="openFounderTerms();return false;">Founding Member Terms</a>.</span>
     </label>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
     <p class="cta-note">No spam. Unsubscribe any time. Founding Member status is <strong>guaranteed for the first 100 signups</strong>. Spots are limited.</p>
@@ -1613,6 +1613,45 @@ footer {
   </div>
 </div>
 
+<!-- FOUNDING MEMBER T&Cs MODAL -->
+<div id="founder-modal" role="dialog" aria-modal="true" aria-label="Founding Member Terms and Conditions" onclick="if(event.target===this)closeFounderTerms()">
+  <div class="privacy-modal-box">
+    <button class="privacy-modal-close" onclick="closeFounderTerms()" aria-label="Close">&#x2715;</button>
+
+    <h1>Founding Member Terms</h1>
+    <p class="pm-updated">Last updated: October 2026 &middot; Version 1.0</p>
+
+    <div class="pm-highlight"><p><strong>Summary:</strong> The first 50 monthly subscribers and first 50 annual subscribers on the Standard plan qualify as Founding Members. Perks are locked in for as long as you stay subscribed.</p></div>
+
+    <h2>1. Who qualifies</h2>
+    <p>Founding Member status is available to the first <strong>50 customers</strong> who start a monthly Standard plan subscription and the first <strong>50 customers</strong> who start an annual Standard plan subscription (100 Founding Members in total). Qualifying is determined by the date and time your paid subscription is confirmed.</p>
+    <p>Joining the early access list does not guarantee Founding Member status. Spots are allocated when your subscription is activated at launch.</p>
+
+    <h2>2. Founding Member perks</h2>
+    <ul>
+      <li><strong>Price locked for life</strong> - your subscription price is fixed at the rate you sign up at, for as long as you remain subscribed. Future price increases do not apply to you.</li>
+      <li><strong>Priority support</strong> - your queries go to the front of the queue. We aim to respond to Founding Members within one business day.</li>
+      <li><strong>Early access to every new feature</strong> - you get access to new WingLift features before they are released to the general user base.</li>
+      <li><strong>Direct line to the team</strong> - Founding Members receive a dedicated contact channel to share feedback, flag issues, and speak directly with the WingLift team.</li>
+    </ul>
+
+    <h2>3. Keeping your Founding Member status</h2>
+    <p>Your Founding Member perks remain active for as long as your subscription remains continuous and in good standing. If you cancel your subscription and later re-subscribe, Founding Member status will not be reinstated, as your original spot will have been reallocated.</p>
+    <p>Upgrading or downgrading between monthly and annual billing does not affect your status, provided the subscription remains uninterrupted.</p>
+
+    <h2>4. Confirmation</h2>
+    <p>You will receive a confirmation email at launch confirming your Founding Member status, the price locked in for your account, and details of how to access your perks. If you do not receive this email within 24 hours of your subscription being activated, contact us at <a href="mailto:hello@winglift.io">hello@winglift.io</a>.</p>
+
+    <h2>5. Changes to these terms</h2>
+    <p>WingLift (trading name of Shape Size or Form Ltd, registered in Ireland) reserves the right to amend these terms. Where changes affect existing Founding Members, we will give at least 30 days' notice by email. Continued use of the service after that date constitutes acceptance of the revised terms.</p>
+
+    <h2>6. Contact</h2>
+    <p>Shape Size or Form Ltd, trading as WingLift &middot; Ireland &middot; <a href="mailto:hello@winglift.io">hello@winglift.io</a></p>
+
+    <p style="margin-top:28px;text-align:center"><button onclick="closeFounderTerms()" style="background:var(--navy);color:#fff;border:none;padding:10px 32px;border-radius:8px;font-size:0.95rem;cursor:pointer;font-family:inherit">Close</button></p>
+  </div>
+</div>
+
 <!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
   <span>We use essential cookies to keep the site working. With your permission we'd also like to set analytics cookies to understand how you use WingLift. See our <a href="#" onclick="openPrivacy('pm-cookies');return false;">Cookie &amp; Privacy Policy</a>.</span>
@@ -1640,7 +1679,17 @@ function closePrivacy() {
   document.getElementById('privacy-modal').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closePrivacy(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePrivacy(); closeFounderTerms(); } });
+function openFounderTerms() {
+  const modal = document.getElementById('founder-modal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+}
+function closeFounderTerms() {
+  document.getElementById('founder-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 function setPricingPeriod(period) {
   const amount = document.getElementById('priceAmount');
