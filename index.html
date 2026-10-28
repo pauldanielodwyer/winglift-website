@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1603,10 +1603,17 @@ function handleSignup(inputId, confirmId, formId) {
     setTimeout(() => { input.style.borderColor = ''; }, 1500);
     return;
   }
+  const email = input.value.trim();
   if (form) form.style.display = 'none';
   confirm.style.display = 'block';
   // Store locally so we can show a persistent confirmation
-  try { localStorage.setItem('wl_signup', input.value); } catch(e) {}
+  try { localStorage.setItem('wl_signup', email); } catch(e) {}
+  // Send to signup worker
+  fetch('https://winglift-signup.winglift.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email }),
+  }).catch(() => {}); // Silently ignore errors - user already sees confirmation
 }
 
 function toggleFaq(btn) {
