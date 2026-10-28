@@ -354,15 +354,16 @@ h1 span { color: var(--gold); }
 .btn-gold:hover { background: var(--gold-dk); transform: translateY(-1px); }
 
 .consent-label {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
   gap: 6px;
   font-size: 0.82rem;
   color: var(--fg-soft);
   cursor: pointer;
-  text-align: left;
   line-height: 1.4;
-  max-width: 340px;
+  max-width: 400px;
+  margin: 8px auto 0;
+  text-align: left;
 }
 .consent-label input[type="checkbox"] {
   flex-shrink: 0;
@@ -1120,11 +1121,11 @@ footer {
     <div class="signup-box" id="heroForm">
       <input type="email" id="heroEmail" placeholder="Your business email" autocomplete="email">
       <button class="btn-gold" onclick="handleSignup('heroEmail','heroConfirm','heroForm','heroConsent')">Get early access</button>
-      <label class="consent-label">
-        <input type="checkbox" id="heroConsent">
-        <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
-      </label>
     </div>
+    <label class="consent-label">
+      <input type="checkbox" id="heroConsent">
+      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
+    </label>
     <div class="signup-confirm" id="heroConfirm">
       ✓ You're on the list. We'll be in touch before launch with your Founding Member details.
     </div>
@@ -1459,11 +1460,11 @@ footer {
     <div class="cta-signup" id="ctaForm">
       <input type="email" id="ctaEmail" placeholder="your@email.com" autocomplete="email">
       <button class="btn-gold" onclick="handleSignup('ctaEmail','ctaConfirm','ctaForm','ctaConsent')">Claim my spot</button>
-      <label class="consent-label consent-label-dark">
-        <input type="checkbox" id="ctaConsent">
-        <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
-      </label>
     </div>
+    <label class="consent-label consent-label-dark">
+      <input type="checkbox" id="ctaConsent">
+      <span>Yes, reserve my Founding Member spot and keep me posted on WingLift. <a href="#" onclick="openPrivacy();return false;">Privacy Policy</a>.</span>
+    </label>
     <div class="cta-confirm" id="ctaConfirm">✓ You're on the list! Watch your inbox around launch.</div>
     <p class="cta-note">No spam. Unsubscribe any time. Founding Member status is <strong>guaranteed for the first 100 signups</strong>. Spots are limited.</p>
   </div>
