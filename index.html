@@ -1609,7 +1609,7 @@ function handleSignup(inputId, confirmId, formId) {
   // Store locally so we can show a persistent confirmation
   try { localStorage.setItem('wl_signup', email); } catch(e) {}
   // Send to signup worker
-  fetch('https://winglift-signup.winglift.workers.dev', {
+  fetch('https://winglift-signup.winglift.workers.dev/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email }),
