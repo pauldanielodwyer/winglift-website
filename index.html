@@ -191,8 +191,9 @@ body::before {
   text-decoration: none;
   color: var(--fg);
 }
-.nav-logo svg { width: 28px; height: 28px; flex-shrink: 0; }
+.nav-logo svg { width: 26px; height: 34px; flex-shrink: 0; }
 .nav-wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+.nav-tagline { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); line-height: 1; display: block; margin-top: 1px; }
 
 .nav-right {
   display: flex;
@@ -955,7 +956,7 @@ footer {
   flex-wrap: wrap;
 }
 .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
-.footer-logo svg { width: 24px; height: 24px; }
+.footer-logo svg { width: 20px; height: 26px; }
 .footer-wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.95rem; }
 .footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
 .footer-links a { color: rgba(255,255,255,0.4); font-size: 0.82rem; text-decoration: none; transition: color 0.15s; }
@@ -1098,16 +1099,18 @@ footer {
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="512" height="512" rx="115.2" fill="#13234A"/>
-        <g transform="translate(97.28 104.12) scale(5.4731) translate(-4.5 -1.5)">
-          <path d="M4.82 24.09 L14.75 54.12 L23.25 49.88 L5.18 23.91 Z M23.17 54.27 L33.85 31.56 L28.15 28.44 L14.83 49.73 Z M28.28 31.77 L39.81 52.72 L48.19 47.28 L33.72 28.23 Z M48.63 51.89 L62.19 6.08 L61.81 5.92 L39.37 48.11 Z" fill="#E3A72F"/>
-          <circle cx="19" cy="52" r="4.75" fill="#E3A72F"/>
-          <circle cx="31" cy="30" r="3.25" fill="#E3A72F"/>
-          <circle cx="44" cy="50" r="5.00" fill="#E3A72F"/>
-        </g>
+      <svg viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Dark navy feather (top/back) -->
+        <path d="M6 62 L44 4 L36 2 L2 56 Z" fill="#13234A"/>
+        <!-- Mid blue feather (middle) -->
+        <path d="M14 66 L46 14 L40 8 L8 60 Z" fill="#4B6CB7"/>
+        <!-- Gold feather (front/bottom) -->
+        <path d="M20 68 L50 22 L46 14 L14 66 Z" fill="#E3A72F"/>
       </svg>
-      <span class="nav-wordmark">WingLift</span>
+      <span>
+        <span class="nav-wordmark">WingLift</span>
+        <span class="nav-tagline">Get found by AI</span>
+      </span>
     </a>
     <div class="nav-right">
       <a href="#how">How it works</a>
@@ -1490,14 +1493,10 @@ footer {
 <footer>
   <div class="footer-inner">
     <a href="#" class="footer-logo">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="512" height="512" rx="115.2" fill="#13234A"/>
-        <g transform="translate(97.28 104.12) scale(5.4731) translate(-4.5 -1.5)">
-          <path d="M4.82 24.09 L14.75 54.12 L23.25 49.88 L5.18 23.91 Z M23.17 54.27 L33.85 31.56 L28.15 28.44 L14.83 49.73 Z M28.28 31.77 L39.81 52.72 L48.19 47.28 L33.72 28.23 Z M48.63 51.89 L62.19 6.08 L61.81 5.92 L39.37 48.11 Z" fill="#E3A72F"/>
-          <circle cx="19" cy="52" r="4.75" fill="#E3A72F"/>
-          <circle cx="31" cy="30" r="3.25" fill="#E3A72F"/>
-          <circle cx="44" cy="50" r="5.00" fill="#E3A72F"/>
-        </g>
+      <svg viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 62 L44 4 L36 2 L2 56 Z" fill="#fff" opacity="0.9"/>
+        <path d="M14 66 L46 14 L40 8 L8 60 Z" fill="#7B9ED9"/>
+        <path d="M20 68 L50 22 L46 14 L14 66 Z" fill="#E3A72F"/>
       </svg>
       <span class="footer-wordmark">WingLift</span>
     </a>
