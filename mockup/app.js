@@ -910,6 +910,11 @@
       </div>
     </div>`;
 
+  function copyText(text, msg) {
+    const fail = () => toast('Couldn’t copy — select the text and copy it manually');
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => toast(msg), fail); else fail();
+  }
+
   /* ── Actions ── */
   const ACTIONS = {
     'site-mode': (el) => { S.siteMode = el.dataset.mode; if (S.pending) { const pm = S.chat.find((x) => x.id === S.pending.msgId); if (pm) pm.resolved = 'Cancelled — site type changed.'; S.pending = null; } refresh(); },
@@ -918,8 +923,8 @@
     'vibe-cancel': () => { const pm = S.chat.find((x) => x.id === S.pending.msgId); if (pm) pm.resolved = 'Cancelled.'; S.pending = null; S.chat.push({ id: uid('m'), from: 'agent', html: 'No problem — nothing was changed.' }); redrawChat(); },
     'vibe-edit': () => { const p = S.pending; const pm = S.chat.find((x) => x.id === p.msgId); if (pm) pm.resolved = 'Editing…'; S.pending = null; S.chat.push({ id: uid('m'), from: 'agent', html: `Sure — what should ${p.day} be instead? For example <em>“make ${p.day} 11–3”</em>.` }); redrawChat(); const i = $('#chatText'); i.value = `make ${p.day} 11–3`; i.focus(); },
     'vibe-done': (el) => { const p = { day: el.dataset.day, to: el.dataset.to, dayIdx: DAYS.indexOf(el.dataset.day.toLowerCase()) }; if (p.dayIdx >= 0) S.hours[p.dayIdx][1] = p.to; S.chat.push({ id: uid('m'), from: 'agent', wide: true, html: publishedHtml(p) }); finishPublish(p); },
-    'copy-code': () => toast('Code copied to clipboard'),
-    'copy-link': () => toast('Link copied: winglift.io/r/murphy-sons'),
+    'copy-code': (el) => copyText(el.parentElement.previousElementSibling.textContent, 'Code copied to clipboard'),
+    'copy-link': () => copyText('https://winglift.io/r/murphy-sons', 'Link copied: winglift.io/r/murphy-sons'),
     toast: (el) => toast(el.dataset.msg),
 
     filter: (el) => { S.approvalFilter = el.dataset.f; refresh(); },
