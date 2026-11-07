@@ -488,6 +488,7 @@
     } else {
       body = `<div class="reply-box">${a.platform ? `<div class="lbl">${esc(a.platform)}</div>` : ''}${esc(a.after)}</div>`;
     }
+    if (a.code && !a.editing) body += `<div class="code mt-2">${esc(a.code)}</div>`;
     return `<div class="card q-card" id="q-${a.id}">
       <span class="q-ico ${t.cls}">${icon(t.ico)}</span>
       <div>
@@ -965,9 +966,9 @@
       $('#proposeCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
     'dev-propose': () => {
-      const t = $('#pTitle').value.trim(); const d = $('#pDesc').value.trim();
+      const t = $('#pTitle').value.trim(); const d = $('#pDesc').value.trim(); const c = $('#pCode').value.trim();
       if (!t) { toast('Add a title'); $('#pTitle').focus(); return; }
-      S.approvals.unshift({ id: uid('a'), type: 'site', title: t, source: `Proposed by ${S.developer.name} (developer)`, when: 'Just now', fromDev: true, after: d || 'See code attached.' });
+      S.approvals.unshift({ id: uid('a'), type: 'site', title: t, source: `Proposed by ${S.developer.name} (developer)`, when: 'Just now', fromDev: true, after: d || 'See code attached.', code: c || undefined });
       addActivity('navy', `${S.developer.name} (developer) proposed: ${t}`);
       ['#pTitle', '#pDesc', '#pCode'].forEach((s) => ($(s).value = ''));
       toast(`Sent to ${S.owner.first}’s approval queue`);
