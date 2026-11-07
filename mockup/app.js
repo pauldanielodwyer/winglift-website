@@ -506,6 +506,7 @@
   }
   async function resolveApproval(id, verb) {
     const a = S.approvals.find((x) => x.id === id); if (!a) return;
+    if (verb === 'approved' && a.type === 'faq' && !faqHasCapacity()) { toast('No FAQ deploys or empty slots left this week — free a slot or wait for Monday'); return; }
     const el = $('#q-' + id);
     if (el) { el.classList.add('leaving'); await sleep(280); }
     S.approvals = S.approvals.filter((x) => x.id !== id);
@@ -518,6 +519,7 @@
     toast(verb === 'approved' ? `Approved — ${a.type === 'social' ? 'scheduled' : a.type === 'review' ? 'reply posted to Google' : 'published'}` : 'Rejected — we won’t publish it');
     refresh();
   }
+  function faqHasCapacity() { return S.faqs.some((x) => !x) && S.faqAllowance.used < S.faqAllowance.total; }
   function applyFaqApproval(a) {
     const idx = S.faqs.findIndex((x) => !x);
     if (idx >= 0 && S.faqAllowance.used < S.faqAllowance.total) {
