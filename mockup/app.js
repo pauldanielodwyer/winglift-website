@@ -926,7 +926,7 @@
     'q-approve': (el) => resolveApproval(el.dataset.id, 'approved'),
     'q-reject': (el) => resolveApproval(el.dataset.id, 'rejected'),
     'q-edit': (el) => { const a = S.approvals.find((x) => x.id === el.dataset.id); a.editing = !a.editing; refresh(); },
-    'q-save': (el) => { const a = S.approvals.find((x) => x.id === el.dataset.id); a.after = $('#edit-' + a.id).value; a.editing = false; toast('Changes saved — still waiting for your approval'); refresh(); },
+    'q-save': (el) => { const a = S.approvals.find((x) => x.id === el.dataset.id); const prev = a.after; a.after = $('#edit-' + a.id).value; a.editing = false; if (a.type === 'review') { const r = S.reviews.find((r) => r.text === a.quote); if (r) r.draft = a.after; } if (a.type === 'social') { const p = S.posts.find((p) => p.text === prev); if (p) p.text = a.after; } toast('Changes saved — still waiting for your approval'); refresh(); },
     'approve-all': async () => { const ids = S.approvals.filter((a) => S.approvalFilter === 'all' || a.type === S.approvalFilter).map((a) => a.id); for (const id of ids) await resolveApproval(id, 'approved'); },
 
     'faq-deploy': (el) => faqDeploy(+el.dataset.i),
@@ -936,7 +936,7 @@
 
     'rv-approve': (el) => { const r = S.reviews.find((x) => x.id === el.dataset.id); r.replied = true; S.approvals = S.approvals.filter((a) => a.quote !== r.text); addActivity('gold', `Replied to ${r.name}’s ${r.stars}★ review`); toast('Reply posted to Google'); refresh(); },
     'rv-edit': (el) => { const r = S.reviews.find((x) => x.id === el.dataset.id); r.editing = true; refresh(); },
-    'rv-save': (el) => { const r = S.reviews.find((x) => x.id === el.dataset.id); r.draft = $('#rv-' + r.id).value; r.editing = false; refresh(); },
+    'rv-save': (el) => { const r = S.reviews.find((x) => x.id === el.dataset.id); r.draft = $('#rv-' + r.id).value; r.editing = false; S.approvals.forEach((a) => { if (a.type === 'review' && a.quote === r.text) a.after = r.draft; }); refresh(); },
     'rv-regen': (el) => { const r = S.reviews.find((x) => x.id === el.dataset.id); r.draft = r.draft.replace(/^(Hi|Thanks)[^,!]*[,!]/, (m) => m.startsWith('Hi') ? `Hello ${r.name.split(' ')[0]},` : `Thank you so much, ${r.name.split(' ')[0]}!`); toast('Draft rewritten'); refresh(); },
     'rr-ch': (el) => { S.rr.channel = el.dataset.ch; S.rr.name = $('#rrName').value; refresh(); },
     'rr-send': () => { const n = $('#rrName').value || 'customer'; toast(`Review request sent to ${esc(n)} by ${{ whatsapp: 'WhatsApp', sms: 'SMS', email: 'email' }[S.rr.channel]}`); addActivity('gold', `Review request sent to ${n}`); },
@@ -944,7 +944,7 @@
     'post-approve': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); const dt = el.parentElement.querySelector('input[type="datetime-local"]'); if (dt && dt.value) p.when = fmtWhen(dt.value); p.status = 'scheduled'; S.approvals = S.approvals.filter((a) => a.after !== p.text); toast(`Scheduled for ${p.when}`); refresh(); },
     'post-unschedule': (el) => { S.posts.find((x) => x.id === el.dataset.id).status = 'draft'; refresh(); },
     'post-edit': (el) => { S.posts.find((x) => x.id === el.dataset.id).editing = true; refresh(); },
-    'post-save': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); p.text = $('#pt-' + p.id).value; p.editing = false; refresh(); },
+    'post-save': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); const prev = p.text; p.text = $('#pt-' + p.id).value; p.editing = false; S.approvals.forEach((a) => { if (a.type === 'social' && a.after === prev) a.after = p.text; }); refresh(); },
 
     wa: (el) => { S.wa[el.dataset.k] = el.dataset.v; if (el.dataset.k === 'review' && el.dataset.v === 'Approve reply') { const r = S.reviews.find((x) => x.id === 'r1'); r.replied = true; S.approvals = S.approvals.filter((a) => a.id !== 'a3'); } if (el.dataset.k === 'nudge' && el.dataset.v === 'Approve') { S.posts[0].status = 'scheduled'; S.approvals = S.approvals.filter((a) => a.id !== 'a4'); } refresh(); },
 
