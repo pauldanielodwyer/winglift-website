@@ -971,7 +971,7 @@
     'dev-prefill': (el) => {
       const f = S.audit.fixes.find((x) => x.id === el.dataset.id);
       $('#pTitle').value = f.title; $('#pDesc').value = f.why;
-      if (f.id === 'f5') $('#pCode').value = '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Plumber",\n  "name": "Murphy & Sons Plumbing & Heating",\n  "address": { "@type": "PostalAddress", "streetAddress": "Unit 4, Donore Road Business Park", "addressLocality": "Drogheda", "postalCode": "A92 X7K2", "addressCountry": "IE" },\n  "telephone": "+353419832210"\n}\n</script>';
+      $('#pCode').value = f.id !== 'f5' ? '' : '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Plumber",\n  "name": "Murphy & Sons Plumbing & Heating",\n  "address": { "@type": "PostalAddress", "streetAddress": "Unit 4, Donore Road Business Park", "addressLocality": "Drogheda", "postalCode": "A92 X7K2", "addressCountry": "IE" },\n  "telephone": "+353419832210"\n}\n</script>';
       $('#proposeCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
     'dev-propose': () => {
