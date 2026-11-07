@@ -673,6 +673,10 @@
       </div>
     </div>`;
   }
+  function fmtWhen(v) {
+    const d = new Date(v);
+    return `${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]} ${d.getDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]}, ${v.slice(11, 16)}`;
+  }
   function dtLocal(when) {
     const m = when.match(/(\d+) Nov, (\d\d:\d\d)/);
     return m ? `2026-11-${m[1].padStart(2, '0')}T${m[2]}` : '';
@@ -937,7 +941,7 @@
     'rr-ch': (el) => { S.rr.channel = el.dataset.ch; S.rr.name = $('#rrName').value; refresh(); },
     'rr-send': () => { const n = $('#rrName').value || 'customer'; toast(`Review request sent to ${esc(n)} by ${{ whatsapp: 'WhatsApp', sms: 'SMS', email: 'email' }[S.rr.channel]}`); addActivity('gold', `Review request sent to ${n}`); },
 
-    'post-approve': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); p.status = 'scheduled'; S.approvals = S.approvals.filter((a) => a.after !== p.text); toast(`Scheduled for ${p.when}`); refresh(); },
+    'post-approve': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); const dt = el.parentElement.querySelector('input[type="datetime-local"]'); if (dt && dt.value) p.when = fmtWhen(dt.value); p.status = 'scheduled'; S.approvals = S.approvals.filter((a) => a.after !== p.text); toast(`Scheduled for ${p.when}`); refresh(); },
     'post-unschedule': (el) => { S.posts.find((x) => x.id === el.dataset.id).status = 'draft'; refresh(); },
     'post-edit': (el) => { S.posts.find((x) => x.id === el.dataset.id).editing = true; refresh(); },
     'post-save': (el) => { const p = S.posts.find((x) => x.id === el.dataset.id); p.text = $('#pt-' + p.id).value; p.editing = false; refresh(); },
