@@ -423,7 +423,7 @@
 &lt;li&gt;${p.day}: ${esc(p.from)}&lt;/li&gt;
 &lt;!-- with --&gt;
 &lt;li&gt;${p.day}: ${esc(p.to)}&lt;/li&gt;</div>
-        <div class="row mt-2"><button class="btn btn-sm" data-action="copy-code">${icon('copy')} Copy code</button><button class="btn btn-sm" data-action="fix-dev" data-id="vibe">Send to ${S.developer.first}</button><button class="btn btn-sm btn-green" data-action="vibe-done">Mark as done</button></div>` });
+        <div class="row mt-2"><button class="btn btn-sm" data-action="copy-code">${icon('copy')} Copy code</button><button class="btn btn-sm" data-action="fix-dev" data-id="vibe">Send to ${S.developer.first}</button><button class="btn btn-sm btn-green" data-action="vibe-done" data-day="${p.day}" data-to="${esc(p.to)}">Mark as done</button></div>` });
       S.vibeBusy = false;
       redrawChat();
       return;
@@ -913,7 +913,7 @@
     'vibe-approve': vibeApprove,
     'vibe-cancel': () => { const pm = S.chat.find((x) => x.id === S.pending.msgId); if (pm) pm.resolved = 'Cancelled.'; S.pending = null; S.chat.push({ id: uid('m'), from: 'agent', html: 'No problem — nothing was changed.' }); redrawChat(); },
     'vibe-edit': () => { const p = S.pending; const pm = S.chat.find((x) => x.id === p.msgId); if (pm) pm.resolved = 'Editing…'; S.pending = null; S.chat.push({ id: uid('m'), from: 'agent', html: `Sure — what should ${p.day} be instead? For example <em>“make ${p.day} 11–3”</em>.` }); redrawChat(); const i = $('#chatText'); i.value = `make ${p.day} 11–3`; i.focus(); },
-    'vibe-done': () => { const p = { day: '', to: '' }; const last = [...S.chat].reverse().find((m) => m.kind === 'preview'); const m = last && last.html.match(/<div class="new">(\w+): ([^<]+)<\/div>/); if (m) { p.day = m[1]; p.to = m[2].replace(/&amp;/g, '&'); p.dayIdx = DAYS.indexOf(p.day.toLowerCase()); S.hours[p.dayIdx][1] = p.to; } S.chat.push({ id: uid('m'), from: 'agent', wide: true, html: publishedHtml(p) }); finishPublish(p); },
+    'vibe-done': (el) => { const p = { day: el.dataset.day, to: el.dataset.to, dayIdx: DAYS.indexOf(el.dataset.day.toLowerCase()) }; if (p.dayIdx >= 0) S.hours[p.dayIdx][1] = p.to; S.chat.push({ id: uid('m'), from: 'agent', wide: true, html: publishedHtml(p) }); finishPublish(p); },
     'copy-code': () => toast('Code copied to clipboard'),
     'copy-link': () => toast('Link copied: winglift.io/r/murphy-sons'),
     toast: (el) => toast(el.dataset.msg),
