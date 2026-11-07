@@ -678,8 +678,10 @@
     return `${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()]} ${d.getDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]}, ${v.slice(11, 16)}`;
   }
   function dtLocal(when) {
-    const m = when.match(/(\d+) Nov, (\d\d:\d\d)/);
-    return m ? `2026-11-${m[1].padStart(2, '0')}T${m[2]}` : '';
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const m = when.match(/(\d+) (\w{3}), (\d\d:\d\d)/);
+    const mi = m ? months.indexOf(m[2]) : -1;
+    return mi >= 0 ? `2026-${String(mi + 1).padStart(2, '0')}-${m[1].padStart(2, '0')}T${m[3]}` : '';
   }
 
   /* 7. WhatsApp */
