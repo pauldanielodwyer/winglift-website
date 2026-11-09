@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagle by WingLift - An Eagle-eye view of your website</title>
+<title>Eagle by WingLift - Your website, finally under your control</title>
 <meta name="description" content="Eagle gives small business owners a finished, fast website on hosting they own, a simple agent to change it just by asking, one easy inbox for every enquiry, and a short list of actions to approve each week - Google review replies, AI-optimised content, FAQs and posts. €99 a month.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://winglift.io/eagle">
-<meta property="og:title" content="Eagle by WingLift - An Eagle-eye view of your website">
+<meta property="og:title" content="Eagle by WingLift - Your website, finally under your control">
 <meta property="og:description" content="A finished website on hosting you own, changes made by chatting, every enquiry in one simple inbox, and smart actions to approve every week. €99/month.">
 <meta property="og:image" content="https://winglift.io/og-image.png">
 <meta property="og:locale" content="en_GB">
@@ -128,6 +128,16 @@ h3 { font-family: 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; m
 .path li { font-size: 0.85rem; color: var(--fg-soft); display: flex; gap: 9px; }
 .path li::before { content: "✓"; color: var(--gold-dk); font-weight: 700; }
 
+/* Pain points */
+#pain { background: #fff; padding-block: 72px; }
+.pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.pain { border: 1px solid var(--border); border-radius: 14px; padding: 22px; background: var(--surface); }
+.pain q { display: block; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; color: var(--fg); margin-bottom: 8px; quotes: "\201C" "\201D"; }
+.pain p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+#pain .center, #compare .center { margin-bottom: 36px; }
+.pain-fix { text-align: center; margin-top: 28px; font-weight: 600; color: var(--fg-soft); }
+.pain-fix span { color: var(--gold-dk); }
+
 /* Steps */
 #how { background: var(--surface); }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
@@ -187,7 +197,7 @@ h3 { font-family: 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; m
 
 /* Own it */
 #own { background: var(--surface); }
-.own-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.own-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .own { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; }
 .own-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--gold-soft); color: var(--gold-dk); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
 .own-ico svg { width: 20px; height: 20px; }
@@ -222,6 +232,16 @@ h3 { font-family: 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; m
 .simple b { display: block; color: var(--gold); font-family: 'Manrope', sans-serif; font-size: 1.02rem; margin-bottom: 4px; }
 
 .mid { color: var(--amber); font-weight: 600; white-space: nowrap; }
+
+/* Compare */
+.compare { max-width: 940px; margin: 0 auto; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; }
+.cmp-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1.2fr; border-bottom: 1px solid var(--border); }
+.cmp-row:last-child { border-bottom: none; }
+.cmp-row > div { padding: 14px 16px; font-size: 0.86rem; color: var(--fg-soft); line-height: 1.5; }
+.cmp-row > div:first-child { font-weight: 600; color: var(--fg); }
+.cmp-row > div:last-child { background: var(--gold-soft); color: var(--fg); font-weight: 600; }
+.cmp-row.head > div { background: var(--navy); color: #fff; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 0.85rem; }
+.cmp-row.head > div:last-child { background: var(--gold); color: var(--navy); }
 
 /* Pricing */
 #pricing { background: var(--surface); }
@@ -260,12 +280,18 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
   .hero-grid, .split { grid-template-columns: 1fr; gap: 40px; }
   .split.rev > :first-child { order: 0; }
   .paths, .queue, .simple { grid-template-columns: 1fr; }
-  .steps, .own-grid { grid-template-columns: 1fr 1fr; }
+  .steps, .own-grid, .pain-grid { grid-template-columns: 1fr 1fr; }
   .nav-right a:not(.nav-cta) { display: none; }
 }
 @media (max-width: 560px) {
   section { padding-block: 64px; }
-  .steps, .own-grid { grid-template-columns: 1fr; }
+  .steps, .own-grid, .pain-grid { grid-template-columns: 1fr; }
+  .cmp-row { grid-template-columns: 1fr; }
+  .cmp-row.head { display: none; }
+  .cmp-row > div { padding: 8px 16px; }
+  .cmp-row > div:first-child { padding-top: 14px; font-family: 'Manrope', sans-serif; }
+  .cmp-row > div:last-child { padding-bottom: 14px; }
+  .cmp-row > div[data-l]::before { content: attr(data-l); display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
   .price-card { padding: 28px 22px; }
   .eye-btn { display: none; }
 }
@@ -303,12 +329,12 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
 <section id="hero">
   <div class="container hero-grid">
     <div>
-      <span class="hero-kicker">New from WingLift · Eagle</span>
-      <h1>An <span>Eagle&#8209;eye view</span> of your website.</h1>
-      <p class="hero-sub">Drop in your current site, answer a few questions, and Eagle gives you a finished, fast website on hosting you own. After that you change it just by asking, and every week Eagle brings you a short list of things to approve: review replies, AI-optimised content, FAQs and posts. Every new enquiry lands in one simple inbox, so no customer slips through.</p>
+      <span class="hero-kicker">New from WingLift · An Eagle&#8209;eye view of your website</span>
+      <h1>Your website, <span>finally under your control.</span></h1>
+      <p class="hero-sub">Change your opening hours, prices or photos just by asking. No agency invoices, no waiting a week, no login you lost in 2019. Eagle gives you a finished, fast website on hosting you own, keeps an eye on it for you, and every week brings you a short list of things to approve: review replies, new enquiries, AI-optimised pages and posts. Every page is built so ChatGPT, Claude and Gemini can find you.</p>
       <div class="hero-actions">
         <a href="/#cta" class="btn btn-gold">Get early access</a>
-        <a href="#how" class="btn btn-ghost-dark">See how it works</a>
+        <a href="#how" class="btn btn-ghost-dark">See your site before you pay</a>
       </div>
       <p class="hero-note">One plan · €99 a month · everything included</p>
       <div class="pill-row">
@@ -355,6 +381,23 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
   </div>
 </section>
 
+<!-- PAIN -->
+<section id="pain">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Sound familiar?</span>
+      <h2>Your website should work for you, <span>not the other way round</span></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain"><q>I emailed the change a week ago</q><p>Small edits sit in someone else's to-do list while your hours or prices stay wrong.</p></div>
+      <div class="pain"><q>Another invoice for one line of text</q><p>Every tweak costs money, so the site never gets updated at all.</p></div>
+      <div class="pain"><q>I don't even know the login</q><p>The site was built years ago. Nobody is sure who has the passwords or the domain.</p></div>
+      <div class="pain"><q>ChatGPT recommends my competitor</q><p>Customers now ask AI for a recommendation, and your business doesn't come up.</p></div>
+    </div>
+    <p class="pain-fix">With Eagle, <span>you</span> hold the keys, make the changes and approve everything.</p>
+  </div>
+</section>
+
 <!-- PATHS -->
 <section id="paths">
   <div class="container">
@@ -370,6 +413,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <p>Connect your WordPress site (or just give us its address). Eagle reads your pages, photos, services and contact details, asks you a few questions, and builds your new site. You check a preview, then it goes live on your own Cloudflare account.</p>
         <ul>
           <li>No developer needed</li>
+          <li>Simple step-by-step to open your own Cloudflare account - your name, your terms</li>
           <li>Your words, photos and pages carried over</li>
           <li>Old links redirected so customers and Google don't hit dead pages</li>
         </ul>
@@ -377,9 +421,9 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <div class="path">
         <span class="path-tag">Have a developer?</span>
         <h3>Your developer moves you over</h3>
-        <p>Eagle builds the new site and hands your developer everything they need: the code, a launch checklist and the redirect list. They handle the domain and go-live, then join your dashboard as a guest to help with the technical side.</p>
+        <p>Eagle builds the new site and you send your developer one ready-written email with everything they need: the code in your own GitHub account, a launch guide, the redirect list and a "Deploy to Cloudflare" button. They handle the domain and go-live, then join your dashboard as a guest.</p>
         <ul>
-          <li>Your developer stays in control of the launch</li>
+          <li>One email to forward - Eagle writes it</li>
           <li>Clean, standard code they can work with</li>
           <li>Guest access, no billing</li>
         </ul>
@@ -387,9 +431,10 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <div class="path">
         <span class="path-tag">Not ready to move?</span>
         <h3>Start on your WordPress site</h3>
-        <p>Keep WordPress for now. Eagle connects through the WordPress API and publishes the changes and content you approve straight to your existing site. Move to your own fast site whenever you're ready.</p>
+        <p>Keep WordPress for now. Eagle connects through the WordPress API and publishes the changes and content you approve straight to your existing site: pages, posts, FAQs, photos and menus. Move to your own fast site whenever you're ready.</p>
         <ul>
           <li>Up and running the same day</li>
+          <li>Never touches your theme or plugin code</li>
           <li>Vibe changes and approvals from day one</li>
           <li>Switch to a new site later - same plan</li>
         </ul>
@@ -420,13 +465,13 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Review your new site</h3>
-        <p>See a full preview. Ask Eagle for changes in plain English until you're happy - nothing is live yet.</p>
+        <h3>Try it before you pay</h3>
+        <p>See your new site in full and ask Eagle for a change or two. Eagle shows what it fixed for you (Google and AI-friendly business details, a sitemap, AI tools no longer blocked) and anything it needs you to decide.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <h3>Go live on your hosting</h3>
-        <p>Eagle publishes to your own Cloudflare account and connects your domain. From then on, you run it from your Eagle-eye view.</p>
+        <p>Eagle publishes to your own Cloudflare account, connects your domain, then checks the live site: <strong>"Your site is live, AI-ready and yours."</strong> From then on, you run it from your Eagle-eye view.</p>
       </div>
     </div>
     <div class="simple">
@@ -447,7 +492,8 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <ul class="check-list">
         <li><span><strong>Plain English in, live change out.</strong> Opening hours, prices, photos, new services, holiday notices.</span></li>
         <li><span><strong>Always a preview first.</strong> You see the before and after, and nothing goes live until you tap Approve.</span></li>
-        <li><span><strong>Bigger jobs go to your developer.</strong> If a request needs real development, Eagle writes it up for them.</span></li>
+        <li><span><strong>Undo anything.</strong> Every change is saved in your history. Go back to any earlier version in one click.</span></li>
+        <li><span><strong>Honest about bigger jobs.</strong> Ask for online booking or a shop and Eagle tells you it's outside the plan, then writes it up as a job for your developer.</span></li>
       </ul>
     </div>
     <div class="chat" aria-label="Example conversation with Eagle">
@@ -508,6 +554,24 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <p>Flagged straight away. Eagle drafts a polite reply that offers to sort it out offline.</p>
         <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
       </div>
+      <div class="qcard">
+        <span class="qtype">Ask for reviews</span>
+        <h3>Review request for this week's customers</h3>
+        <p>A short message with your Google and Trustpilot links, plus a QR code for the van. Eagle never offers rewards for reviews or filters out unhappy customers.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Alert</span>
+        <h3>A competitor just appeared in ChatGPT</h3>
+        <p>For "plumber in your town". Eagle has drafted a page and an FAQ so you're in the running too.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">From your developer</span>
+        <h3>New quote form for bathroom refits</h3>
+        <p>Your developer proposed this change. You see the preview and decide - not the other way round.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Ask a question</span><span>Skip</span></div>
+      </div>
     </div>
     <div class="channels"><span>Dashboard</span><span>WhatsApp</span><span>Email digest</span></div>
   </div>
@@ -524,7 +588,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <li><span><strong>Call back, send reply or done.</strong> Every enquiry has the same three buttons. That's the whole process.</span></li>
         <li><span><strong>A reply ready to send.</strong> Written from your prices, hours and the towns you cover. Send it as it is, or change it first.</span></li>
         <li><span><strong>Nobody slips through.</strong> If an enquiry is still waiting at the end of the day, Eagle reminds you on WhatsApp.</span></li>
-        <li><span><strong>See what's working.</strong> How many enquiries came in this month, and whether they found you through your website, Google or a post.</span></li>
+        <li><span><strong>See what's working.</strong> How many enquiries came in this month, and whether they found you through your website, Google, a post - or by asking ChatGPT.</span></li>
       </ul>
     </div>
     <div class="inbox" aria-label="Example enquiries inbox">
@@ -541,10 +605,10 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       </div>
       <div class="lead">
         <div class="lead-head"><b>Bathroom refit</b><span class="chip c-ok">New job</span></div>
-        <small>WhatsApp · yesterday · Would like a visit next week</small>
+        <small>Website form · yesterday · Found you by asking ChatGPT · Would like a visit next week</small>
         <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
       </div>
-      <div class="inbox-foot">This month: 14 enquiries · 9 from your website · 4 from Google · 1 from Facebook</div>
+      <div class="inbox-foot">This month: 14 enquiries · 7 from your website · 4 from Google · 2 via ChatGPT · 1 from Facebook</div>
     </div>
   </div>
 </section>
@@ -603,12 +667,22 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <div class="own">
         <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
         <h3>Your code</h3>
-        <p>Standard, clean code your developer can read and work on. Download it any time.</p>
+        <p>Standard, clean code kept in your own GitHub account. Download it, or send it to any developer, any time.</p>
       </div>
       <div class="own">
         <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <h3>Your say</h3>
         <p>Nothing is published - not a word, not a reply, not a post - until you approve it.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Your history</h3>
+        <p>Every change is logged - "14 updates this year" - and any earlier version can be restored in one click.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Your yearly report</h3>
+        <p>A plain-English site health report each year: what changed, what AI tools say about you now, and what came in.</p>
       </div>
     </div>
   </div>
@@ -625,6 +699,8 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <li><span><strong>Handles the launch</strong> if you'd rather they moved your domain.</span></li>
         <li><span><strong>Sees the technical side:</strong> deploys, site health, and the fixes Eagle recommends.</span></li>
         <li><span><strong>Proposes changes</strong> that land in your approval list.</span></li>
+        <li><span><strong>Takes jobs from you</strong> in the dashboard - "please fix the booking form" - so every website conversation is in one place.</span></li>
+        <li><span><strong>Switch developers in one click.</strong> Remove the old developer's access and send the new one an invite and a handover pack. Nothing is lost.</span></li>
       </ul>
     </div>
     <div class="perm-card">
@@ -632,9 +708,29 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <div class="perm-row"><span>Run the migration and go-live</span><span class="yes">Yes</span></div>
       <div class="perm-row"><span>See deploys, site health and technical fixes</span><span class="yes">Yes</span></div>
       <div class="perm-row"><span>Propose changes and attach code</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Take jobs you assign</span><span class="yes">Yes</span></div>
       <div class="perm-row"><span>Publish without your approval</span><span class="no">No</span></div>
       <div class="perm-row"><span>See your customer enquiries</span><span class="no">No</span></div>
       <div class="perm-row"><span>See billing</span><span class="no">No</span></div>
+      <div class="perm-row"><span>Keep access after you remove them</span><span class="no">No</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="compare">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Compare</span>
+      <h2>Eagle vs the usual options</h2>
+    </div>
+    <div class="compare" role="table" aria-label="Eagle compared with agencies and website builders">
+      <div class="cmp-row head" role="row"><div role="columnheader"></div><div role="columnheader">Agency or developer</div><div role="columnheader">Website builder</div><div role="columnheader">Eagle</div></div>
+      <div class="cmp-row" role="row"><div role="cell">A small change</div><div role="cell" data-l="Agency or developer">Email, wait, pay an invoice</div><div role="cell" data-l="Website builder">Log in and learn the editor</div><div role="cell" data-l="Eagle">Ask in plain English, approve, done</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Who owns the site</div><div role="cell" data-l="Agency or developer">Often unclear</div><div role="cell" data-l="Website builder">Locked into the platform</div><div role="cell" data-l="Eagle">You: your hosting, domain and code</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Found by ChatGPT, Claude, Gemini</div><div role="cell" data-l="Agency or developer">Rarely considered</div><div role="cell" data-l="Website builder">Up to you</div><div role="cell" data-l="Eagle">Built in and checked every week</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Reviews, enquiries, posts</div><div role="cell" data-l="Agency or developer">Separate jobs</div><div role="cell" data-l="Website builder">Extra apps</div><div role="cell" data-l="Eagle">One dashboard, approve in a tap</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Your developer</div><div role="cell" data-l="Agency or developer">Holds the keys</div><div role="cell" data-l="Website builder">Not needed, or works around it</div><div role="cell" data-l="Eagle">A guest who works for you</div></div>
     </div>
   </div>
 </section>
@@ -681,6 +777,14 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <p>No. You can start with Eagle connected to your existing WordPress site and move to your own fast site later, or move straight away. It's the same plan either way.</p>
       </details>
       <details class="faq-item">
+        <summary>Can I see my new site before I pay?</summary>
+        <p>Yes. Drop in your site, answer a few questions and Eagle shows you the finished site. You can ask for a change or two and see it happen before you sign up.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What can Eagle change on my WordPress site?</summary>
+        <p>Pages, posts and FAQs; your opening hours or phone number on every page at once; photos and their descriptions; menus; and SEO titles and descriptions. Every change can be undone through WordPress's own revision history. Eagle never touches your theme or plugin code, and anything involving your shop or prices always needs your approval.</p>
+      </details>
+      <details class="faq-item">
         <summary>Why move off WordPress at all?</summary>
         <p>A modern static site on Cloudflare is faster, has far fewer plugins and updates to break, and is easier for Eagle and AI tools to read. Most small business sites don't need anything WordPress-specific.</p>
       </details>
@@ -691,6 +795,18 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <details class="faq-item">
         <summary>I already have a developer. Do I still need Eagle?</summary>
         <p>Eagle does the day-to-day work - small edits, review replies, content, posts - so your developer can focus on the jobs that need them. Invite them as a guest and they can run the migration, see the technical details and propose changes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I change developer?</summary>
+        <p>Remove the old developer from your dashboard in one click and invite the new one. They get a handover pack with everything they need. Your site, code, history and Eagle stay exactly as they are.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I want something bigger, like online booking?</summary>
+        <p>Eagle handles content and everyday changes. If you ask for new functionality like booking or a shop, Eagle tells you it's outside the plan and writes it up as a clear job for your developer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will Eagle help me get more reviews?</summary>
+        <p>Yes. Eagle drafts review requests with your Google and Trustpilot links and gives you a QR code for in-person asks. It won't offer rewards for reviews or hide unhappy customers - that breaks Google's and Trustpilot's rules and could get your listing penalised.</p>
       </details>
       <details class="faq-item">
         <summary>How do I handle new enquiries?</summary>
@@ -719,8 +835,8 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
 <!-- CTA -->
 <section id="cta">
   <div class="container">
-    <h2>Get an <span>Eagle&#8209;eye view</span> of your website</h2>
-    <p>A finished site you own, changes made by chatting, and a short list of smart actions every week. €99 a month, everything included.</p>
+    <h2>Take back control of your website.<br><span>Keep an Eagle&#8209;eye on it.</span></h2>
+    <p>A finished site you own, changes made by asking, every enquiry in one inbox and a short list of smart actions every week. €99 a month, everything included.</p>
     <a href="/#cta" class="btn btn-gold">Get early access</a>
   </div>
 </section>
