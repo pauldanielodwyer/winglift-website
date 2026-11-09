@@ -1085,6 +1085,17 @@ footer {
   .nav-right a:not(.nav-cta) { display: none; }
   .report-metrics { grid-template-columns: repeat(3,1fr); }
 }
+/* ── EAGLE TEASER ── */
+#eagle { padding-block: 64px 0; background: var(--bg); }
+.eagle-band { display: flex; align-items: center; justify-content: space-between; gap: 32px; background: var(--navy); color: #fff; border-radius: 16px; padding: 40px 44px; text-decoration: none; transition: transform 0.15s; }
+.eagle-band:hover { transform: translateY(-2px); }
+.eagle-kicker { font-size: 0.73rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px; }
+.eagle-band h2 { color: #fff; margin-bottom: 10px; }
+.eagle-band p { color: rgba(255,255,255,0.7); font-size: 0.95rem; max-width: 620px; line-height: 1.7; }
+.eagle-btn { flex-shrink: 0; background: var(--gold); color: var(--navy); font-weight: 600; font-size: 0.95rem; padding: 14px 24px; border-radius: 8px; white-space: nowrap; }
+@media (max-width: 800px) {
+  .eagle-band { flex-direction: column; align-items: flex-start; padding: 32px 28px; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
@@ -1113,6 +1124,7 @@ footer {
       </span>
     </a>
     <div class="nav-right">
+      <a href="/eagle">Eagle</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#articles">Articles</a>
@@ -1389,6 +1401,20 @@ footer {
   </div>
 </section>
 
+<!-- EAGLE -->
+<section id="eagle">
+  <div class="container">
+    <a href="/eagle" class="eagle-band">
+      <div>
+        <span class="eagle-kicker">New from WingLift</span>
+        <h2>Meet Eagle - your website, your code, your dashboard.</h2>
+        <p>Eagle turns Wren's findings into approved fixes: website edits, FAQs, review replies and social posts, published on the site you already have. Your developer works for you again. €99 a month, everything included.</p>
+      </div>
+      <span class="eagle-btn">Discover Eagle &rarr;</span>
+    </a>
+  </div>
+</section>
+
 <!-- ARTICLES -->
 <section id="articles">
   <div class="container">
@@ -1501,6 +1527,7 @@ footer {
       <span class="footer-wordmark">WingLift</span>
     </a>
     <ul class="footer-links">
+      <li><a href="/eagle">Eagle</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#articles">Articles</a></li>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagle by WingLift - Your website, your code, your dashboard</title>
+<meta name="description" content="Eagle by WingLift watches what ChatGPT, Claude and Gemini say about your business, drafts the fixes, and publishes only what you approve - on the website you already have, with the developer you already trust. One plan, €99 a month.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://winglift.io/eagle">
+<meta property="og:title" content="Eagle by WingLift - Your developer works for you again">
+<meta property="og:description" content="AI audit findings, approved fixes, reviews, social posts and FAQs in one dashboard. No rebuild, no hosting, no code handover. €99/month.">
+<meta property="og:image" content="https://winglift.io/og-image.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="WingLift">
+<link rel="canonical" href="https://winglift.io/eagle">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Eagle by WingLift",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://winglift.io/eagle",
+  "description": "Dashboard for small business owners that tracks what ChatGPT, Claude and Gemini say about the business, drafts fixes, and publishes approved changes to the owner's existing website via the WordPress REST API or copy-paste code for their own developer.",
+  "offers": {
+    "@type": "Offer",
+    "name": "Eagle",
+    "price": "99",
+    "priceCurrency": "EUR",
+    "billingDuration": "P1M"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "WingLift",
+    "legalName": "Shape Size or Form Ltd",
+    "url": "https://winglift.io/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<style>
+:root {
+  --navy: #13234A; --navy-80: #2B3D6B; --steel: #4A6CB7;
+  --gold: #E3A72F; --gold-dk: #C8921A;
+  --bg: #FFFFFF; --surface: #F7F8FC; --border: #E4E8F0;
+  --muted: #6B7A99; --fg: #13234A; --fg-soft: #3D4F72;
+  --green: #1F9D6B; --red: #D64545; --amber: #B7791F;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.container { max-width: 1100px; margin-inline: auto; padding-inline: 24px; }
+
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; padding-inline: 24px; max-width: 1100px; margin-inline: auto; }
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--fg); }
+.nav-logo svg { width: 26px; height: 34px; flex-shrink: 0; }
+.nav-wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+.nav-tagline { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); line-height: 1; display: block; margin-top: 1px; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-right a { text-decoration: none; color: var(--muted); font-size: 0.88rem; font-weight: 500; transition: color 0.15s; }
+.nav-right a:hover, .nav-right a.active { color: var(--fg); }
+.nav-cta { background: var(--navy); color: #fff !important; padding: 8px 18px; border-radius: 7px; font-weight: 600 !important; font-size: 0.85rem !important; }
+.nav-cta:hover { background: var(--navy-80); }
+
+section { padding-block: 88px; }
+.section-eyebrow { font-size: 0.73rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 10px; display: block; }
+h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance; max-width: 820px; margin: 0 auto 20px; }
+h1 span { color: var(--gold); }
+h2 { font-family: 'Manrope', sans-serif; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; margin-bottom: 14px; }
+h3 { font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.section-sub { font-size: 1rem; color: var(--fg-soft); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+.center { text-align: center; }
+.center .section-sub { margin-inline: auto; }
+
+.btn { display: inline-block; padding: 14px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.15s, border-color 0.15s, transform 0.15s; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-dk); transform: translateY(-1px); }
+.btn-ghost { border: 1.5px solid var(--border); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--navy); }
+.btn-navy { display: block; width: 100%; text-align: center; background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-80); }
+
+/* Hero */
+#hero { text-align: center; padding-block: 80px 64px; }
+.product-mark { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.product-mark svg { width: 34px; height: 44px; }
+.product-mark .pm-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1; text-align: left; }
+.product-mark .pm-by { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.hero-sub { font-size: 1.1rem; color: var(--fg-soft); max-width: 620px; margin: 0 auto 36px; line-height: 1.7; }
+.hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-note { font-size: 0.82rem; color: var(--muted); margin-top: 16px; }
+.not-list { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 48px; }
+.not-item { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; font-size: 0.85rem; font-weight: 500; color: var(--fg-soft); }
+.not-item::before { content: "✕"; color: var(--gold-dk); font-weight: 700; }
+
+/* Findings */
+#findings { background: var(--surface); }
+.findings-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.report-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 24px rgba(19,35,74,0.08); }
+.report-top { background: var(--navy); color: rgba(255,255,255,0.75); font-size: 0.75rem; font-weight: 500; padding: 12px 18px; display: flex; justify-content: space-between; }
+.report-top strong { color: #fff; }
+.ai-finding { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.ai-finding:last-child { border-bottom: none; }
+.ai-finding-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.ai-finding-name { font-weight: 600; font-size: 0.92rem; }
+.status { font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.st-ok { background: #E6F6EF; color: var(--green); }
+.st-no { background: #FCEBEB; color: var(--red); }
+.st-warn { background: #FDF3E1; color: var(--amber); }
+.ai-finding p { font-size: 0.84rem; color: var(--fg-soft); line-height: 1.55; }
+.ai-finding q { display: block; font-style: italic; color: var(--muted); font-size: 0.82rem; margin-top: 6px; border-left: 3px solid var(--border); padding-left: 10px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; font-size: 0.93rem; color: var(--fg-soft); line-height: 1.6; }
+.check-list li::before { content: "✓"; color: var(--gold-dk); font-weight: 700; flex-shrink: 0; }
+.check-list strong { color: var(--fg); }
+
+/* Features */
+.feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.feature { border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; background: var(--bg); }
+.feature-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(227,167,47,0.12); color: var(--gold-dk); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.feature-icon svg { width: 20px; height: 20px; }
+.feature p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+
+/* Steps */
+#how { background: var(--surface); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.step { padding: 28px 24px; border-top: 3px solid var(--navy); }
+.step-num { font-family: 'Manrope', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: #9AA3B4; margin-bottom: 14px; display: block; }
+.step p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+
+/* Developer */
+.dev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.perm-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.perm-row { display: flex; justify-content: space-between; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.perm-row:last-child { border-bottom: none; }
+.perm-row.head { background: var(--surface); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.yes { color: var(--green); font-weight: 600; }
+.nope { color: var(--muted); }
+
+/* Pricing */
+#pricing { background: var(--surface); }
+.price-card { max-width: 440px; margin: 0 auto; background: var(--bg); border: 2px solid var(--navy); border-radius: 14px; padding: 36px 32px; text-align: left; }
+.price-tier { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.price-amount { font-family: 'Manrope', sans-serif; font-size: 2.8rem; font-weight: 800; line-height: 1; }
+.price-amount sup { font-size: 1.1rem; vertical-align: super; }
+.price-period { font-size: 0.88rem; color: var(--muted); margin: 6px 0 24px; }
+.price-card .check-list { margin-bottom: 28px; }
+.price-card .check-list li { font-size: 0.88rem; }
+
+/* FAQ */
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-list details { border-bottom: 1px solid var(--border); }
+.faq-list summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 600; font-size: 0.95rem; display: flex; justify-content: space-between; gap: 12px; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; font-size: 1.2rem; color: var(--muted); transition: transform 0.2s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { padding-bottom: 18px; font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+
+/* CTA */
+#cta { background: var(--navy); text-align: center; }
+#cta h2 { color: #fff; }
+#cta p { color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 32px; }
+
+footer { background: #0A1020; padding-block: 40px; }
+.footer-inner { max-width: 1100px; margin-inline: auto; padding-inline: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
+.footer-logo svg { width: 20px; height: 26px; }
+.footer-wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.95rem; }
+.footer-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.4); font-size: 0.82rem; text-decoration: none; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.footer-legal { font-size: 0.75rem; color: rgba(255,255,255,0.25); margin-top: 14px; line-height: 1.6; width: 100%; }
+.footer-legal a { color: rgba(255,255,255,0.4); }
+
+@media (max-width: 900px) {
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .findings-grid, .dev-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 560px) {
+  h1 { font-size: 2rem; }
+  section { padding-block: 64px; }
+  .feature-grid, .steps { grid-template-columns: 1fr; }
+  .nav-right a:not(.nav-cta) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg viewBox="0 0 56 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 68 C8 68 6 52 18 28 C26 12 36 4 40 2 C40 2 34 8 30 22 C24 42 22 62 22 68 Z" fill="#13234A"/>
+        <path d="M18 70 C18 70 20 54 32 32 C40 16 50 8 54 6 C54 6 46 14 42 28 C36 48 34 66 34 70 Z" fill="#4A6CB7"/>
+        <path d="M26 72 C26 72 34 60 44 46 C50 38 56 32 56 32 C56 32 50 40 46 50 C40 62 38 72 38 72 Z" fill="#E3A72F"/>
+      </svg>
+      <span>
+        <span class="nav-wordmark">WingLift</span>
+        <span class="nav-tagline">Get found by AI</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <a href="/">Wren audit</a>
+      <a href="/eagle" class="active">Eagle</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="/#cta" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section id="hero">
+  <div class="container">
+    <div class="product-mark">
+      <svg viewBox="0 0 56 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 68 C8 68 6 52 18 28 C26 12 36 4 40 2 C40 2 34 8 30 22 C24 42 22 62 22 68 Z" fill="#13234A"/>
+        <path d="M18 70 C18 70 20 54 32 32 C40 16 50 8 54 6 C54 6 46 14 42 28 C36 48 34 66 34 70 Z" fill="#4A6CB7"/>
+        <path d="M26 72 C26 72 34 60 44 46 C50 38 56 32 56 32 C56 32 50 40 46 50 C40 62 38 72 38 72 Z" fill="#E3A72F"/>
+      </svg>
+      <span class="pm-name">Eagle<span class="pm-by">by WingLift</span></span>
+    </div>
+    <h1>Your website, your code, your dashboard - <span>your developer works for you again.</span></h1>
+    <p class="hero-sub">Eagle watches what ChatGPT, Claude and Gemini say about your business, drafts the fixes, and publishes only what you approve - on the website you already have, with the developer you already trust.</p>
+    <div class="hero-actions">
+      <a href="/#cta" class="btn btn-gold">Get early access</a>
+      <a href="#how" class="btn btn-ghost">See how it works</a>
+    </div>
+    <p class="hero-note">One plan · €99 a month · everything included</p>
+    <div class="not-list" aria-label="What Eagle does not do">
+      <span class="not-item">No site rebuild</span>
+      <span class="not-item">No hosting move</span>
+      <span class="not-item">No code handover</span>
+      <span class="not-item">Nothing goes live without you</span>
+    </div>
+  </div>
+</section>
+
+<section id="findings">
+  <div class="container findings-grid">
+    <div class="report-card" aria-label="Example audit findings">
+      <div class="report-top"><span><strong>AI audit</strong> · example business</span><span>“plumber near me”</span></div>
+      <div class="ai-finding">
+        <div class="ai-finding-head"><span class="ai-finding-name">ChatGPT</span><span class="status st-no">Not mentioned</span></div>
+        <p>Names 3 competitors for “plumber in your town” - not you.</p>
+      </div>
+      <div class="ai-finding">
+        <div class="ai-finding-head"><span class="ai-finding-name">Claude</span><span class="status st-ok">Mentioned</span></div>
+        <p>Started mentioning you this week.</p>
+        <q>“A family-run plumbing and heating firm known for fast boiler repairs…”</q>
+      </div>
+      <div class="ai-finding">
+        <div class="ai-finding-head"><span class="ai-finding-name">Gemini</span><span class="status st-warn">Inaccurate info</span></div>
+        <p>Lists your old address. Customers could turn up at the wrong door.</p>
+      </div>
+    </div>
+    <div>
+      <span class="section-eyebrow">Real findings, not a score</span>
+      <h2>See exactly what AI says about you - word for word.</h2>
+      <p class="section-sub">Eagle is built on WingLift's Wren audit. Instead of a made-up number, you get the facts and what to do about them.</p>
+      <ul class="check-list">
+        <li><span><strong>Per-AI status</strong> for ChatGPT, Claude and Gemini: mentioned, not mentioned, or getting your details wrong.</span></li>
+        <li><span><strong>The verbatim answers</strong> each AI gives your customers.</span></li>
+        <li><span><strong>Competitors named</strong> instead of you, and for which searches.</span></li>
+        <li><span><strong>A short, prioritised fix list</strong> in plain English - and who does each fix: you, Eagle or your developer.</span></li>
+        <li><span><strong>Alerts when things change</strong>, like a competitor appearing in ChatGPT answers.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="center">
+      <span class="section-eyebrow">Everything in one dashboard</span>
+      <h2>From finding the problem to fixing it.</h2>
+      <p class="section-sub">Eagle drafts the work. You approve it in one place - or straight from WhatsApp.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <h3>AI audit report</h3>
+        <p>What each AI says, what it gets wrong, who it recommends instead, and how that changes week to week.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Vibe Update Agent</h3>
+        <p>Type “change Sunday hours to 10-4”. Eagle shows you a preview, you approve, and it's done.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>One approval queue</h3>
+        <p>Site edits, FAQs, social posts and review replies all wait for your yes. Approve, edit or reject.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+        <h3>FAQ manager</h3>
+        <p>Five FAQ slots written to answer the questions AI and customers actually ask, refreshed weekly.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <h3>Reviews</h3>
+        <p>Drafted replies to every Google review, a calm draft for the tricky ones, and review requests with Google and Trustpilot links and a QR code.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Social posts</h3>
+        <p>Drafts for Facebook and Instagram, LinkedIn and your Google Business Profile. Approve and schedule.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <h3>WhatsApp</h3>
+        <p>A daily suggestion with Approve, Edit and Skip buttons, review alerts, and quick website edits by chat.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+        <h3>Developer guest access</h3>
+        <p>Invite your own developer to see technical findings, the deploy log and propose changes. Billing stays private.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2>Works with the website you already have.</h2>
+    <p class="section-sub">No migration, no new hosting, no new website. Eagle sits alongside what you've got.</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">01</span><h3>Connect</h3><p>On WordPress, add a scoped application password so Eagle can publish approved edits. Not on WordPress? No connection needed.</p></div>
+      <div class="step"><span class="step-num">02</span><h3>Audit</h3><p>Eagle checks ChatGPT, Claude and Gemini every week and tells you what changed.</p></div>
+      <div class="step"><span class="step-num">03</span><h3>Draft</h3><p>It drafts the fixes: website edits, FAQs, review replies and social posts, in plain English.</p></div>
+      <div class="step"><span class="step-num">04</span><h3>You approve</h3><p>Approved edits publish through the WordPress REST API, saved as a revision you can roll back. Other sites get copy-paste code for your developer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="developer">
+  <div class="container dev-grid">
+    <div>
+      <span class="section-eyebrow">For your developer</span>
+      <h2>Your developer stays in charge of the code.</h2>
+      <p class="section-sub">Eagle doesn't replace the person who built your site. It gives them a clear, prioritised to-do list from the AI audit and a place to propose changes for your approval.</p>
+      <ul class="check-list">
+        <li><span>Invite them by email as a dashboard guest.</span></li>
+        <li><span>They see technical findings, connection details and every change Eagle has published.</span></li>
+        <li><span>They can propose changes, with code attached, straight into your approval queue.</span></li>
+        <li><span>They never see billing, and you can remove access at any time.</span></li>
+      </ul>
+    </div>
+    <div class="perm-card" aria-label="Developer guest permissions">
+      <div class="perm-row head"><span>Developer guest can…</span><span></span></div>
+      <div class="perm-row"><span>See AI audit findings &amp; fix list</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>See deploy log &amp; connection details</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Propose changes with code</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Publish without your approval</span><span class="nope">No</span></div>
+      <div class="perm-row"><span>See or change billing</span><span class="nope">No</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container center">
+    <span class="section-eyebrow">Pricing</span>
+    <h2>One plan. Everything included.</h2>
+    <p class="section-sub">No tiers to compare, no add-ons, no agency retainer.</p>
+    <div class="price-card">
+      <div class="price-tier">Eagle</div>
+      <div class="price-amount"><sup>€</sup>99</div>
+      <div class="price-period">per month</div>
+      <ul class="check-list">
+        <li><span>Weekly AI audit across ChatGPT, Claude and Gemini</span></li>
+        <li><span>Vibe Update Agent for website edits</span></li>
+        <li><span>Unified approval queue</span></li>
+        <li><span>FAQ manager with weekly deploys</span></li>
+        <li><span>Review replies and review requests</span></li>
+        <li><span>Social posts for Meta, LinkedIn and Google Business Profile</span></li>
+        <li><span>WhatsApp approvals and alerts</span></li>
+        <li><span>Developer guest access</span></li>
+      </ul>
+      <a href="/#cta" class="btn btn-navy">Get early access</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="center">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>Questions owners ask.</h2>
+      <p class="section-sub"></p>
+    </div>
+    <div class="faq-list">
+      <details><summary>Will you rebuild or host my website?</summary><p>No. Eagle is software only. Your website stays where it is, with the hosting and developer you already have. We never ask for your code.</p></details>
+      <details><summary>Does my site need to be on WordPress?</summary><p>No. On WordPress, Eagle can publish approved edits for you through the WordPress REST API. On any other platform, Eagle gives you or your developer the exact copy-paste change instead.</p></details>
+      <details><summary>Can anything go live without me?</summary><p>No. Every website edit, FAQ, social post and review reply waits in your approval queue until you approve it, in the dashboard or on WhatsApp.</p></details>
+      <details><summary>What does my developer do?</summary><p>The code work, as they do today. Eagle gives them a prioritised list of technical fixes from the AI audit and lets them propose changes for your approval. They're invited as a guest and never see billing.</p></details>
+      <details><summary>How is Eagle different from the Wren audit?</summary><p>Wren tells you what AI says about your business. Eagle uses those findings and helps you act on them: it drafts the fixes, manages your FAQs, reviews and social posts, and publishes what you approve.</p></details>
+      <details><summary>Do you give me an “AI visibility score”?</summary><p>No. Scores hide the detail. Eagle shows you exactly what each AI says, what it gets wrong, and who it recommends instead.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <h2>Be one of the first to try Eagle.</h2>
+    <p>Join the WingLift early-access list and we'll let you know as soon as Eagle is ready for your business.</p>
+    <a href="/#cta" class="btn btn-gold">Get early access</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <svg viewBox="0 0 56 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 68 C8 68 6 52 18 28 C26 12 36 4 40 2 C40 2 34 8 30 22 C24 42 22 62 22 68 Z" fill="#fff" opacity="0.9"/>
+        <path d="M18 70 C18 70 20 54 32 32 C40 16 50 8 54 6 C54 6 46 14 42 28 C36 48 34 66 34 70 Z" fill="#7B9ED9"/>
+        <path d="M26 72 C26 72 34 60 44 46 C50 38 56 32 56 32 C56 32 50 40 46 50 C40 62 38 72 38 72 Z" fill="#E3A72F"/>
+      </svg>
+      <span class="footer-wordmark">WingLift</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/">Wren audit</a></li>
+      <li><a href="/eagle">Eagle</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:info@winglift.io">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 WingLift · Built in Dublin · Serving EU &amp; UK</p>
+    <p class="footer-legal">WingLift is a trading name of Shape Size or Form Ltd · Company No. 447780 · Registered in Dublin, Ireland · Registered office: Talent Garden, D.C.U. Alpha, Finglas Road Old, Dublin 11, D11 YNR2 · <a href="/privacy.html">Privacy &amp; Cookie Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
