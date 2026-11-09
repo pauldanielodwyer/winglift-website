@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eagle by WingLift - An Eagle-eye view of your website</title>
-<meta name="description" content="Eagle gives small business owners a finished, fast website on hosting they own, a simple agent to change it just by asking, and a short list of actions to approve each week - Google review replies, AI-optimised content, FAQs and posts. €99 a month.">
+<meta name="description" content="Eagle gives small business owners a finished, fast website on hosting they own, a simple agent to change it just by asking, one easy inbox for every enquiry, and a short list of actions to approve each week - Google review replies, AI-optimised content, FAQs and posts. €99 a month.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://winglift.io/eagle">
 <meta property="og:title" content="Eagle by WingLift - An Eagle-eye view of your website">
-<meta property="og:description" content="A finished website on hosting you own, changes made by chatting, and smart actions to approve every week. €99/month.">
+<meta property="og:description" content="A finished website on hosting you own, changes made by chatting, every enquiry in one simple inbox, and smart actions to approve every week. €99/month.">
 <meta property="og:image" content="https://winglift.io/og-image.png">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="WingLift">
@@ -22,7 +22,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://winglift.io/eagle",
-  "description": "Eagle rebuilds a small business website (for example from WordPress) as a fast site hosted on the owner's own Cloudflare account, then lets the owner change it by chatting with an agent and approve suggested actions such as Google review replies, AI-optimised content, FAQs and social posts.",
+  "description": "Eagle rebuilds a small business website (for example from WordPress) as a fast site hosted on the owner's own Cloudflare account, then lets the owner change it by chatting with an agent, manage leads and enquiries in one simple inbox, and approve suggested actions such as Google review replies, AI-optimised content, FAQs and social posts.",
   "offers": {
     "@type": "Offer",
     "name": "Eagle",
@@ -200,6 +200,27 @@ h3 { font-family: 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; m
 .perm-row.head { background: var(--surface); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .yes { color: var(--green); font-weight: 600; white-space: nowrap; }
 .no { color: var(--red); font-weight: 600; white-space: nowrap; }
+/* Leads */
+#leads { background: var(--surface); }
+.inbox { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(19,35,74,0.08); }
+.inbox-top { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: var(--navy); color: #fff; }
+.inbox-top strong { font-family: 'Manrope', sans-serif; font-size: 0.95rem; }
+.inbox-count { font-size: 0.75rem; font-weight: 700; background: var(--gold); color: var(--navy); border-radius: 999px; padding: 3px 10px; }
+.lead { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.lead.urgent { box-shadow: inset 4px 0 0 var(--red); }
+.lead-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.lead-head b { font-size: 0.92rem; }
+.lead small { display: block; font-size: 0.8rem; color: var(--muted); line-height: 1.45; margin-top: 4px; }
+.lead-btns { display: flex; gap: 8px; margin-top: 12px; }
+.lead-btns span { flex: 1; text-align: center; font-size: 0.85rem; font-weight: 700; padding: 10px 6px; border-radius: 8px; border: 1px solid var(--border); white-space: nowrap; }
+.lead-btns .ap { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.inbox-foot { padding: 12px 18px; font-size: 0.78rem; color: var(--muted); }
+
+/* Simple */
+.simple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.simple div { background: var(--navy); color: rgba(255,255,255,0.75); border-radius: 14px; padding: 22px; font-size: 0.88rem; line-height: 1.6; }
+.simple b { display: block; color: var(--gold); font-family: 'Manrope', sans-serif; font-size: 1.02rem; margin-bottom: 4px; }
+
 .mid { color: var(--amber); font-weight: 600; white-space: nowrap; }
 
 /* Pricing */
@@ -238,7 +259,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
 @media (max-width: 960px) {
   .hero-grid, .split { grid-template-columns: 1fr; gap: 40px; }
   .split.rev > :first-child { order: 0; }
-  .paths, .queue { grid-template-columns: 1fr; }
+  .paths, .queue, .simple { grid-template-columns: 1fr; }
   .steps, .own-grid { grid-template-columns: 1fr 1fr; }
   .nav-right a:not(.nav-cta) { display: none; }
 }
@@ -267,6 +288,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <a href="#paths">Get your site</a>
       <a href="#how">How it works</a>
       <a href="#approve">Approvals</a>
+      <a href="#leads">Leads</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="/">WingLift</a>
@@ -283,7 +305,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
     <div>
       <span class="hero-kicker">New from WingLift · Eagle</span>
       <h1>An <span>Eagle&#8209;eye view</span> of your website.</h1>
-      <p class="hero-sub">Drop in your current site, answer a few questions, and Eagle gives you a finished, fast website on hosting you own. After that you change it just by asking, and every week Eagle brings you a short list of things to approve: review replies, AI-optimised content, FAQs and posts.</p>
+      <p class="hero-sub">Drop in your current site, answer a few questions, and Eagle gives you a finished, fast website on hosting you own. After that you change it just by asking, and every week Eagle brings you a short list of things to approve: review replies, AI-optimised content, FAQs and posts. Every new enquiry lands in one simple inbox, so no customer slips through.</p>
       <div class="hero-actions">
         <a href="/#cta" class="btn btn-gold">Get early access</a>
         <a href="#how" class="btn btn-ghost-dark">See how it works</a>
@@ -294,6 +316,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <span class="pill">Your domain</span>
         <span class="pill">Your code</span>
         <span class="pill">Nothing goes live without you</span>
+        <span class="pill">If you can use WhatsApp, you can use Eagle</span>
       </div>
     </div>
 
@@ -307,6 +330,11 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
         <div class="eye-txt"><b>2 new Google reviews</b><small>Replies drafted, including a calm reply to a 2-star review</small></div>
         <span class="eye-btn">Review</span>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+        <div class="eye-txt"><b>3 new enquiries</b><small>One urgent leak, one boiler quote, one bathroom refit - replies drafted</small></div>
+        <span class="eye-btn">Reply</span>
       </div>
       <div class="eye-row">
         <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
@@ -401,6 +429,11 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <p>Eagle publishes to your own Cloudflare account and connects your domain. From then on, you run it from your Eagle-eye view.</p>
       </div>
     </div>
+    <div class="simple">
+      <div><b>One screen</b>Everything that needs you - enquiries, reviews, changes - on one page, most important first.</div>
+      <div><b>Big buttons, plain words</b>Approve, reply, call back, done. No jargon, no settings to learn.</div>
+      <div><b>Works on WhatsApp</b>Do it all from your phone between jobs. If you can send a message, you can run Eagle.</div>
+    </div>
   </div>
 </section>
 
@@ -477,6 +510,42 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       </div>
     </div>
     <div class="channels"><span>Dashboard</span><span>WhatsApp</span><span>Email digest</span></div>
+  </div>
+</section>
+
+<!-- LEADS -->
+<section id="leads">
+  <div class="container split rev">
+    <div>
+      <span class="eyebrow">Leads &amp; enquiries</span>
+      <h2>Every enquiry in one place. <span>Three big buttons.</span></h2>
+      <p class="sub" style="margin-bottom:28px">Website forms, Google messages, WhatsApp and email all land in one simple list. Eagle tells you who it is and what they need, and drafts a reply. You just pick what to do next.</p>
+      <ul class="check-list">
+        <li><span><strong>Call back, send reply or done.</strong> Every enquiry has the same three buttons. That's the whole process.</span></li>
+        <li><span><strong>A reply ready to send.</strong> Written from your prices, hours and the towns you cover. Send it as it is, or change it first.</span></li>
+        <li><span><strong>Nobody slips through.</strong> If an enquiry is still waiting at the end of the day, Eagle reminds you on WhatsApp.</span></li>
+        <li><span><strong>See what's working.</strong> How many enquiries came in this month, and whether they found you through your website, Google or a post.</span></li>
+      </ul>
+    </div>
+    <div class="inbox" aria-label="Example enquiries inbox">
+      <div class="inbox-top"><strong>New enquiries</strong><span class="inbox-count">3 waiting</span></div>
+      <div class="lead urgent">
+        <div class="lead-head"><b>Leaking pipe</b><span class="chip c-no">Urgent</span></div>
+        <small>Website form · 8 min ago · "Water coming through the kitchen ceiling"</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="lead">
+        <div class="lead-head"><b>Boiler service quote</b><span class="chip c-warn">Quote</span></div>
+        <small>Google message · 1 hour ago · Reply drafted with your service price</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="lead">
+        <div class="lead-head"><b>Bathroom refit</b><span class="chip c-ok">New job</span></div>
+        <small>WhatsApp · yesterday · Would like a visit next week</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="inbox-foot">This month: 14 enquiries · 9 from your website · 4 from Google · 1 from Facebook</div>
+    </div>
   </div>
 </section>
 
@@ -564,6 +633,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <div class="perm-row"><span>See deploys, site health and technical fixes</span><span class="yes">Yes</span></div>
       <div class="perm-row"><span>Propose changes and attach code</span><span class="yes">Yes</span></div>
       <div class="perm-row"><span>Publish without your approval</span><span class="no">No</span></div>
+      <div class="perm-row"><span>See your customer enquiries</span><span class="no">No</span></div>
       <div class="perm-row"><span>See billing</span><span class="no">No</span></div>
     </div>
   </div>
@@ -585,6 +655,7 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
         <li>Your site rebuilt and moved to hosting you own</li>
         <li>Vibe agent - change your site by chatting</li>
         <li>Weekly approval list on dashboard and WhatsApp</li>
+        <li>Leads and enquiries inbox with drafted replies</li>
         <li>Google review replies and review requests</li>
         <li>AI-optimised content and FAQ manager</li>
         <li>Social posts for Facebook, LinkedIn and Google</li>
@@ -620,6 +691,14 @@ footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08);
       <details class="faq-item">
         <summary>I already have a developer. Do I still need Eagle?</summary>
         <p>Eagle does the day-to-day work - small edits, review replies, content, posts - so your developer can focus on the jobs that need them. Invite them as a guest and they can run the migration, see the technical details and propose changes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I handle new enquiries?</summary>
+        <p>Every enquiry from your website, Google, WhatsApp and email shows up in one list with three buttons: call back, send reply or done. Eagle drafts the reply for you and reminds you if anyone is still waiting at the end of the day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to be good with computers?</summary>
+        <p>No. Eagle is built for busy owners, not techies: one screen, big buttons and plain English. If you can send a WhatsApp message, you can run Eagle.</p>
       </details>
       <details class="faq-item">
         <summary>Can anything go live without me?</summary>
