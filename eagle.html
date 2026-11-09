@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagle by WingLift - Your website, finally under your control</title>
+<meta name="description" content="Eagle gives small business owners a finished website - an improved copy of their current site or a brand-new one - that their own developer puts live, then lets them run it from WhatsApp: change it just by asking, answer every enquiry and approve review replies, AI-optimised content, FAQs and posts.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://winglift.io/eagle">
+<meta property="og:title" content="Eagle by WingLift - Your website, finally under your control">
+<meta property="og:description" content="A finished website your developer puts live, run from WhatsApp: changes made by asking, every enquiry in one place, and smart actions to approve every week. €99/month.">
+<meta property="og:image" content="https://winglift.io/og-image.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="WingLift">
+<link rel="canonical" href="https://winglift.io/eagle">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Eagle by WingLift",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://winglift.io/eagle",
+  "description": "Eagle produces a finished small business website - an improved copy of the existing site (for example from WordPress) or a brand-new one - shown to the owner on an interactive preview link and handed to the owner's own developer to put live. The owner then runs it from WhatsApp: changing the site by asking, answering enquiries, and approving Google review replies, AI-optimised content, FAQs and social posts. Eagle does not host websites.",
+  "offers": {
+    "@type": "Offer",
+    "name": "Eagle",
+    "price": "99",
+    "priceCurrency": "EUR",
+    "billingDuration": "P1M"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "WingLift",
+    "legalName": "Shape Size or Form Ltd",
+    "url": "https://winglift.io/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<style>
+:root {
+  --night: #0B1630; --navy: #13234A; --navy-80: #2B3D6B; --steel: #4A6CB7; --sky: #7B9ED9;
+  --gold: #E3A72F; --gold-dk: #C8921A; --gold-soft: rgba(227,167,47,0.14);
+  --bg: #FFFFFF; --surface: #F7F8FC; --border: #E4E8F0;
+  --muted: #6B7A99; --fg: #13234A; --fg-soft: #3D4F72;
+  --green: #1F9D6B; --red: #D64545; --amber: #B7791F;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 24px; }
+a { color: inherit; }
+
+/* Nav (Eagle-branded, dark) */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(11,22,48,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; padding-inline: 24px; max-width: 1120px; margin-inline: auto; }
+.eagle-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+.eagle-logo svg { width: 34px; height: 34px; flex-shrink: 0; }
+.eagle-word { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; line-height: 1; }
+.eagle-by { display: block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 3px; }
+.nav-right { display: flex; align-items: center; gap: 26px; }
+.nav-right a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 500; transition: color 0.15s; }
+.nav-right a:hover { color: #fff; }
+.nav-right .nav-cta { background: var(--gold); color: var(--navy); padding: 9px 18px; border-radius: 7px; font-weight: 600; font-size: 0.85rem; }
+.nav-right .nav-cta:hover { background: var(--gold-dk); color: var(--navy); }
+
+section { padding-block: 92px; scroll-margin-top: 64px; }
+.eyebrow { font-size: 0.73rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 10px; display: block; }
+h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2.4rem, 5.6vw, 3.9rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance; margin-bottom: 22px; }
+h1 span, h2 span { color: var(--gold); }
+h2 { font-family: 'Manrope', sans-serif; font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; margin-bottom: 14px; }
+h3 { font-family: 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; margin-bottom: 8px; }
+.sub { font-size: 1.02rem; color: var(--fg-soft); max-width: 600px; line-height: 1.7; margin-bottom: 48px; }
+.center { text-align: center; }
+.center .sub { margin-inline: auto; }
+
+.btn { display: inline-block; padding: 14px 26px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.15s, border-color 0.15s, transform 0.15s; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-dk); transform: translateY(-1px); }
+.btn-ghost-dark { border: 1.5px solid rgba(255,255,255,0.25); color: #fff; }
+.btn-ghost-dark:hover { border-color: #fff; }
+.btn-navy { display: block; width: 100%; text-align: center; background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-80); }
+
+/* Hero */
+#hero { background: radial-gradient(1200px 500px at 80% -10%, rgba(74,108,183,0.35), transparent 60%), var(--night); color: #fff; padding-block: 84px 96px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 8px; background: rgba(227,167,47,0.14); color: var(--gold); border: 1px solid rgba(227,167,47,0.35); border-radius: 999px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; margin-bottom: 22px; }
+.hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 560px; margin-bottom: 34px; line-height: 1.7; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-note { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 16px; }
+.pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; }
+.pill { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 6px 14px; }
+.pill::before { content: "✓ "; color: var(--gold); font-weight: 700; }
+
+/* Eagle-eye view card */
+.eye-card { background: #fff; color: var(--fg); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); overflow: hidden; }
+.eye-top { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--border); }
+.eye-top strong { font-family: 'Manrope', sans-serif; font-size: 0.95rem; }
+.eye-top span { font-size: 0.75rem; color: var(--muted); }
+.eye-row { display: flex; gap: 12px; align-items: flex-start; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+.eye-row:last-child { border-bottom: none; }
+.eye-ico { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--gold-soft); color: var(--gold-dk); }
+.eye-ico svg { width: 17px; height: 17px; }
+.eye-ico.ok { background: #E6F6EF; color: var(--green); }
+.eye-txt { flex: 1; min-width: 0; }
+.eye-txt b { display: block; font-size: 0.86rem; font-weight: 600; }
+.eye-txt small { display: block; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+.ai-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.chip { font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.c-ok { background: #E6F6EF; color: var(--green); }
+.c-no { background: #FCEBEB; color: var(--red); }
+.c-warn { background: #FDF3E1; color: var(--amber); }
+.eye-btn { font-size: 0.75rem; font-weight: 600; background: var(--navy); color: #fff; border-radius: 6px; padding: 5px 10px; white-space: nowrap; align-self: center; }
+
+/* Paths */
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.path { border: 1px solid var(--border); border-radius: 16px; padding: 28px 26px; background: #fff; display: flex; flex-direction: column; }
+.path.featured { border: 2px solid var(--gold); box-shadow: 0 8px 30px rgba(227,167,47,0.15); }
+.path-tag { align-self: flex-start; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--surface); color: var(--muted); margin-bottom: 16px; }
+.path.featured .path-tag { background: var(--gold-soft); color: var(--gold-dk); }
+.path p { font-size: 0.9rem; color: var(--fg-soft); line-height: 1.65; margin-bottom: 14px; }
+.path ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.path li { font-size: 0.85rem; color: var(--fg-soft); display: flex; gap: 9px; }
+.path li::before { content: "✓"; color: var(--gold-dk); font-weight: 700; }
+
+/* Pain points */
+#pain { background: #fff; padding-block: 72px; }
+.pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.pain { border: 1px solid var(--border); border-radius: 14px; padding: 22px; background: var(--surface); }
+.pain q { display: block; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; color: var(--fg); margin-bottom: 8px; quotes: "\201C" "\201D"; }
+.pain p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+#pain .center, #compare .center { margin-bottom: 36px; }
+.pain-fix { text-align: center; margin-top: 28px; font-weight: 600; color: var(--fg-soft); }
+.pain-fix span { color: var(--gold-dk); }
+
+/* WhatsApp */
+#whatsapp { background: var(--navy); color: #fff; }
+#whatsapp h2 { color: #fff; }
+#whatsapp .sub { color: rgba(255,255,255,0.75); }
+#whatsapp .check-list li { color: rgba(255,255,255,0.85); }
+#whatsapp .check-list strong { color: #fff; }
+.wa-phone { width: 320px; max-width: 100%; margin: 0 auto; background: #0b141a; border-radius: 34px; padding: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.35); }
+.wa-screen { background: #efe7dc; border-radius: 26px; overflow: hidden; }
+.wa-top { background: #075e54; color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem; }
+.wa-top small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.8; }
+.wa-av { width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-weight: 800; font-family: 'Manrope', sans-serif; }
+.wa-chat { padding: 14px 12px; display: flex; flex-direction: column; gap: 8px; }
+.wa-b { max-width: 86%; background: #fff; color: #111b21; border-radius: 10px; padding: 8px 10px; font-size: 0.8rem; line-height: 1.45; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+.wa-b.me { align-self: flex-end; background: #d9fdd3; }
+.wa-b b { display: block; font-size: 0.74rem; color: #075e54; margin-bottom: 2px; }
+.wa-acts { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+.wa-acts span { flex: 1; text-align: center; border-top: 1px solid #e9edef; padding-top: 6px; color: #027eb5; font-weight: 600; font-size: 0.76rem; }
+
+/* Steps */
+#how { background: var(--surface); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+.step { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 26px 22px; position: relative; }
+.step-num { font-family: 'Manrope', sans-serif; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 0.9rem; }
+.step p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.q-list { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.q-list span { font-size: 0.78rem; color: var(--fg-soft); background: var(--surface); border-radius: 6px; padding: 6px 9px; }
+
+/* Split sections */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.split.rev > :first-child { order: 2; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; font-size: 0.94rem; color: var(--fg-soft); line-height: 1.6; }
+.check-list li::before { content: "✓"; color: var(--gold-dk); font-weight: 700; flex-shrink: 0; }
+.check-list strong { color: var(--fg); }
+
+/* Chat mock */
+.chat { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.msg { max-width: 86%; padding: 11px 14px; border-radius: 12px; font-size: 0.88rem; line-height: 1.5; }
+.msg.me { align-self: flex-end; background: var(--navy); color: #fff; border-bottom-right-radius: 4px; }
+.msg.ea { align-self: flex-start; background: #fff; border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.msg.ea b { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dk); margin-bottom: 4px; }
+.diff { margin-top: 8px; font-size: 0.8rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+.diff div { padding: 6px 10px; }
+.diff .old { background: #FCEBEB; color: var(--red); text-decoration: line-through; }
+.diff .new { background: #E6F6EF; color: var(--green); }
+.msg-actions { display: flex; gap: 8px; margin-top: 10px; }
+.msg-actions span { font-size: 0.78rem; font-weight: 600; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); }
+.msg-actions .ap { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.live { align-self: flex-start; font-size: 0.8rem; font-weight: 600; color: var(--green); background: #E6F6EF; border-radius: 999px; padding: 5px 12px; }
+
+/* Approvals */
+#approve { background: var(--night); color: #fff; }
+#approve .sub { color: rgba(255,255,255,0.7); }
+#approve .eyebrow { color: var(--gold); }
+.queue { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.qcard { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; }
+.qtype { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.qcard h3 { color: #fff; font-size: 1rem; }
+.qcard p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+.qcard q { display: block; font-style: italic; font-size: 0.82rem; color: rgba(255,255,255,0.8); border-left: 3px solid var(--gold); padding-left: 10px; margin-top: 10px; }
+.qbtns { display: flex; gap: 8px; margin-top: auto; padding-top: 16px; }
+.qbtns span { font-size: 0.76rem; font-weight: 600; padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); }
+.qbtns .ap { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.channels { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+.channels span { font-size: 0.82rem; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 6px 14px; }
+
+/* Findings */
+.report-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 24px rgba(19,35,74,0.08); }
+.report-top { background: var(--navy); color: rgba(255,255,255,0.75); font-size: 0.75rem; font-weight: 500; padding: 12px 18px; display: flex; justify-content: space-between; }
+.report-top strong { color: #fff; }
+.ai-finding { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.ai-finding:last-child { border-bottom: none; }
+.ai-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; font-weight: 600; font-size: 0.92rem; }
+.ai-finding p { font-size: 0.84rem; color: var(--fg-soft); line-height: 1.55; }
+
+/* Own it */
+#own { background: var(--surface); }
+.own-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.own { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; }
+.own-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--gold-soft); color: var(--gold-dk); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.own-ico svg { width: 20px; height: 20px; }
+.own p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+
+/* Developer */
+.perm-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #fff; }
+.perm-row { display: flex; justify-content: space-between; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.perm-row:last-child { border-bottom: none; }
+.perm-row.head { background: var(--surface); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.yes { color: var(--green); font-weight: 600; white-space: nowrap; }
+.no { color: var(--red); font-weight: 600; white-space: nowrap; }
+/* Leads */
+#leads { background: var(--surface); }
+.inbox { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(19,35,74,0.08); }
+.inbox-top { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: var(--navy); color: #fff; }
+.inbox-top strong { font-family: 'Manrope', sans-serif; font-size: 0.95rem; }
+.inbox-count { font-size: 0.75rem; font-weight: 700; background: var(--gold); color: var(--navy); border-radius: 999px; padding: 3px 10px; }
+.lead { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.lead.urgent { box-shadow: inset 4px 0 0 var(--red); }
+.lead-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.lead-head b { font-size: 0.92rem; }
+.lead small { display: block; font-size: 0.8rem; color: var(--muted); line-height: 1.45; margin-top: 4px; }
+.lead-btns { display: flex; gap: 8px; margin-top: 12px; }
+.lead-btns span { flex: 1; text-align: center; font-size: 0.85rem; font-weight: 700; padding: 10px 6px; border-radius: 8px; border: 1px solid var(--border); white-space: nowrap; }
+.lead-btns .ap { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.inbox-foot { padding: 12px 18px; font-size: 0.78rem; color: var(--muted); }
+
+/* Simple */
+.simple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.simple div { background: var(--navy); color: rgba(255,255,255,0.75); border-radius: 14px; padding: 22px; font-size: 0.88rem; line-height: 1.6; }
+.simple b { display: block; color: var(--gold); font-family: 'Manrope', sans-serif; font-size: 1.02rem; margin-bottom: 4px; }
+
+.mid { color: var(--amber); font-weight: 600; white-space: nowrap; }
+
+/* Compare */
+.compare { max-width: 940px; margin: 0 auto; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; }
+.cmp-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1.2fr; border-bottom: 1px solid var(--border); }
+.cmp-row:last-child { border-bottom: none; }
+.cmp-row > div { padding: 14px 16px; font-size: 0.86rem; color: var(--fg-soft); line-height: 1.5; }
+.cmp-row > div:first-child { font-weight: 600; color: var(--fg); }
+.cmp-row > div:last-child { background: var(--gold-soft); color: var(--fg); font-weight: 600; }
+.cmp-row.head > div { background: var(--navy); color: #fff; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 0.85rem; }
+.cmp-row.head > div:last-child { background: var(--gold); color: var(--navy); }
+
+/* Pricing */
+#pricing { background: var(--surface); }
+.price-card { max-width: 480px; margin: 0 auto; background: #fff; border: 2px solid var(--gold); border-radius: 18px; padding: 36px 34px; box-shadow: 0 8px 32px rgba(227,167,47,0.15); }
+.price-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.15rem; margin-bottom: 4px; }
+.price-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 20px; }
+.price { font-family: 'Manrope', sans-serif; font-size: 3.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.price small { font-size: 1rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.price-card ul { list-style: none; margin: 26px 0 28px; display: flex; flex-direction: column; gap: 11px; text-align: left; }
+.price-card li { font-size: 0.9rem; color: var(--fg-soft); display: flex; gap: 10px; }
+.price-card li::before { content: "✓"; color: var(--gold-dk); font-weight: 700; }
+.price-foot { font-size: 0.78rem; color: var(--muted); margin-top: 14px; text-align: center; }
+
+/* FAQ */
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 600; font-size: 0.98rem; display: flex; justify-content: space-between; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--gold-dk); font-size: 1.3rem; line-height: 1; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { font-size: 0.92rem; color: var(--fg-soft); line-height: 1.7; padding-bottom: 20px; }
+
+/* CTA + footer */
+#cta { background: var(--night); color: #fff; text-align: center; }
+#cta h2 { color: #fff; }
+#cta p { color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto 30px; }
+footer { background: var(--night); border-top: 1px solid rgba(255,255,255,0.08); padding-block: 40px; color: rgba(255,255,255,0.55); }
+.footer-inner { max-width: 1120px; margin-inline: auto; padding-inline: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.footer-links { list-style: none; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { text-decoration: none; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+.footer-links a:hover { color: #fff; }
+.footer-copy, .footer-legal { font-size: 0.76rem; line-height: 1.6; max-width: 760px; }
+.footer-legal a { color: rgba(255,255,255,0.7); }
+
+@media (max-width: 960px) {
+  .hero-grid, .split { grid-template-columns: 1fr; gap: 40px; }
+  .split.rev > :first-child { order: 0; }
+  .paths, .queue, .simple { grid-template-columns: 1fr; }
+  .steps, .own-grid, .pain-grid { grid-template-columns: 1fr 1fr; }
+  .nav-right a:not(.nav-cta) { display: none; }
+}
+@media (max-width: 560px) {
+  section { padding-block: 64px; }
+  .steps, .own-grid, .pain-grid { grid-template-columns: 1fr; }
+  .cmp-row { grid-template-columns: 1fr; }
+  .cmp-row.head { display: none; }
+  .cmp-row > div { padding: 8px 16px; }
+  .cmp-row > div:first-child { padding-top: 14px; font-family: 'Manrope', sans-serif; }
+  .cmp-row > div:last-child { padding-bottom: 14px; }
+  .cmp-row > div[data-l]::before { content: attr(data-l); display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .price-card { padding: 28px 22px; }
+  .eye-btn { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/eagle" class="eagle-logo" aria-label="Eagle by WingLift">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 20 C8 9 32 9 38 20 C32 31 8 31 2 20 Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="7.5" fill="#E3A72F"/>
+        <circle cx="20" cy="20" r="3.2" fill="#0B1630"/>
+        <circle cx="22.4" cy="17.6" r="1.3" fill="#fff"/>
+      </svg>
+      <span><span class="eagle-word">Eagle</span><span class="eagle-by">by WingLift</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="#paths">Get your site</a>
+      <a href="#how">How it works</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#leads">Leads</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="/">WingLift</a>
+      <a href="/#cta" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-kicker">New from WingLift · An Eagle&#8209;eye view of your website</span>
+      <h1>Your website, <span>finally under your control.</span></h1>
+      <p class="hero-sub">Run your website from WhatsApp. Text Eagle to change your hours, prices or photos, answer new enquiries and approve review replies with one tap. No agency invoices, no waiting a week, no login you lost in 2019. Eagle gives you a finished, fast site - an improved copy of your current one or a brand-new one - and your own developer puts it live. Every page is built so ChatGPT, Claude and Gemini can find you.</p>
+      <div class="hero-actions">
+        <a href="/#cta" class="btn btn-gold">Get early access</a>
+        <a href="#how" class="btn btn-ghost-dark">See how it works</a>
+      </div>
+      <p class="hero-note">One plan · €99 a month · everything included</p>
+      <div class="pill-row">
+        <span class="pill">Your hosting</span>
+        <span class="pill">Your domain</span>
+        <span class="pill">Your code</span>
+        <span class="pill">Nothing goes live without you</span>
+        <span class="pill">Run it all from WhatsApp</span>
+      </div>
+    </div>
+
+    <div class="eye-card" aria-label="Example Eagle-eye view">
+      <div class="eye-top"><strong>Your Eagle-eye view</strong><span>This week</span></div>
+      <div class="eye-row">
+        <div class="eye-ico ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div class="eye-txt"><b>Website live and healthy</b><small>On your own hosting · loads in under a second</small></div>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <div class="eye-txt"><b>2 new Google reviews</b><small>Replies drafted, including a calm reply to a 2-star review</small></div>
+        <span class="eye-btn">Review</span>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+        <div class="eye-txt"><b>3 new enquiries</b><small>One urgent leak, one boiler quote, one bathroom refit - replies drafted</small></div>
+        <span class="eye-btn">Reply</span>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="eye-txt"><b>New AI-optimised page ready</b><small>"Emergency boiler repair" - written to answer what people ask AI</small></div>
+        <span class="eye-btn">Approve</span>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <div class="eye-txt"><b>What AI says about you</b>
+          <div class="ai-chips"><span class="chip c-no">ChatGPT · not mentioned</span><span class="chip c-ok">Claude · mentioned</span><span class="chip c-warn">Gemini · old address</span></div>
+        </div>
+      </div>
+      <div class="eye-row">
+        <div class="eye-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="eye-txt"><b>Ask Eagle to change anything</b><small>"Add our new van photo to the homepage"</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section id="pain">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Sound familiar?</span>
+      <h2>Your website should work for you, <span>not the other way round</span></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain"><q>I emailed the change a week ago</q><p>Small edits sit in someone else's to-do list while your hours or prices stay wrong.</p></div>
+      <div class="pain"><q>Another invoice for one line of text</q><p>Every tweak costs money, so the site never gets updated at all.</p></div>
+      <div class="pain"><q>I don't even know the login</q><p>The site was built years ago. Nobody is sure who has the passwords or the domain.</p></div>
+      <div class="pain"><q>ChatGPT recommends my competitor</q><p>Customers now ask AI for a recommendation, and your business doesn't come up.</p></div>
+    </div>
+    <p class="pain-fix">With Eagle, <span>you</span> hold the keys, make the changes and approve everything.</p>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<section id="whatsapp">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">WhatsApp first</span>
+      <h2>Your website, run from <span>WhatsApp</span></h2>
+      <p class="sub" style="margin-bottom:28px">No new app to learn and no logins to remember. Eagle messages you when something needs you, and you reply with a tap or a text - between jobs, from the van, wherever you are.</p>
+      <ul class="check-list">
+        <li><span><strong>Change your site by texting.</strong> "Change Sunday hours to 10-4." Eagle shows you the change and you tap Approve.</span></li>
+        <li><span><strong>New enquiries, straight away.</strong> Who it is, what they need and a reply ready to send. Call back, send reply or done.</span></li>
+        <li><span><strong>Reviews handled.</strong> A reply drafted for every new Google review, including a calm one for the unhappy customer.</span></li>
+        <li><span><strong>Your weekly list.</strong> AI-optimised pages, FAQs and posts, approved in a minute.</span></li>
+        <li><span><strong>The big picture when you want it.</strong> Your Eagle-eye view dashboard shows everything in one place on any screen.</span></li>
+      </ul>
+    </div>
+    <div class="wa-phone" aria-label="Example Eagle WhatsApp chat">
+      <div class="wa-screen">
+        <div class="wa-top"><span class="wa-av">E</span><div>Eagle<small>Business account</small></div></div>
+        <div class="wa-chat">
+          <div class="wa-b"><b>New enquiry · website</b>Leaking pipe - "Water coming through the kitchen ceiling". Reply drafted.<div class="wa-acts"><span>Call back</span><span>Send reply</span><span>Done</span></div></div>
+          <div class="wa-b"><b>New 5-star Google review</b>Sarah K: "Came out the same evening, tidy and fair." Reply drafted.<div class="wa-acts"><span>Approve</span><span>Edit</span><span>Skip</span></div></div>
+          <div class="wa-b me">Change Sunday hours to 10-4</div>
+          <div class="wa-b">Sunday: Closed → <strong>10:00 - 16:00</strong> on your homepage, contact page and Google profile.<div class="wa-acts"><span>Approve</span><span>Edit</span><span>Cancel</span></div></div>
+          <div class="wa-b me">Approve</div>
+          <div class="wa-b">Done ✓ Live on your website and Google.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHS -->
+<section id="paths">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Get your finished site</span>
+      <h2>Improved or brand new. <span>Your developer</span> puts it live.</h2>
+      <p class="sub">Eagle builds the site and you check it on your own preview link. Then you forward it to your developer, who puts it live on hosting in your name. Eagle doesn't host your site or do the setup, so hosting and technical questions stay with someone you already trust.</p>
+    </div>
+    <div class="paths">
+      <div class="path featured">
+        <span class="path-tag">Most popular</span>
+        <h3>An improved copy of your site</h3>
+        <p>Give Eagle your website address or connect WordPress. It keeps your look, words and photos, then makes the site faster, fills in missing details and makes it easy for Google and AI tools to read.</p>
+        <ul>
+          <li>Looks familiar to your customers</li>
+          <li>Your words, photos and pages carried over</li>
+          <li>Old links redirected so nobody hits a dead page</li>
+        </ul>
+      </div>
+      <div class="path">
+        <span class="path-tag">Time for a change?</span>
+        <h3>A brand-new site</h3>
+        <p>Answer a few questions about your business and Eagle designs a fresh, modern site using your existing content, services and photos.</p>
+        <ul>
+          <li>A new look without an agency</li>
+          <li>Built around the jobs you want more of</li>
+          <li>Clean, standard code any developer can work with</li>
+        </ul>
+      </div>
+      <div class="path">
+        <span class="path-tag">Not ready to switch?</span>
+        <h3>Stay on WordPress for now</h3>
+        <p>Keep your WordPress site. Eagle connects through the WordPress API and publishes the changes and content you approve: pages, posts, FAQs, photos and menus. Switch to a new site whenever you're ready.</p>
+        <ul>
+          <li>Up and running the same day</li>
+          <li>Never touches your theme or plugin code</li>
+          <li>Switch later - same plan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">How it works</span>
+      <h2>From old site to finished site in four steps</h2>
+      <p class="sub">You answer questions about your business, not about technology.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Drop in your site</h3>
+        <p>Connect WordPress with one secure key, or paste your website address. Eagle gathers your pages, photos and details.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Answer a few questions</h3>
+        <p>Plain-English questions so the new site says the right things:</p>
+        <div class="q-list"><span>Which towns do you serve?</span><span>What jobs do you most want more of?</span><span>Opening hours and emergency call-outs?</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Check your preview link</h3>
+        <p>Eagle sends you a link on WhatsApp. Click around your new site and ask for changes. Eagle shows what it fixed for you (Google and AI-friendly business details, a sitemap, AI tools no longer blocked) and anything it needs you to decide.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Forward it to your developer</h3>
+        <p>One tap sends your developer a ready-written email: the code in your own GitHub, a launch guide and the redirect list. They put it live on your hosting and connect it to Eagle. Eagle checks the live site: <strong>"Your site is live, AI-ready and yours."</strong></p>
+      </div>
+    </div>
+    <div class="simple">
+      <div><b>One screen</b>Everything that needs you - enquiries, reviews, changes - on one page, most important first.</div>
+      <div><b>Big buttons, plain words</b>Approve, reply, call back, done. No jargon, no settings to learn.</div>
+      <div><b>WhatsApp first</b>Do it all from your phone between jobs. If you can send a message, you can run Eagle.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIBE -->
+<section id="vibe">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">Change it by chatting</span>
+      <h2>Just tell Eagle what to change</h2>
+      <p class="sub" style="margin-bottom:28px">No logins to remember, no page builders, no waiting a week for a small edit. WhatsApp Eagle what you want (or type it in the dashboard), see exactly what will change, and approve it.</p>
+      <ul class="check-list">
+        <li><span><strong>Plain English in, live change out.</strong> Opening hours, prices, photos, new services, holiday notices.</span></li>
+        <li><span><strong>Always a preview first.</strong> You see the before and after, and nothing goes live until you tap Approve.</span></li>
+        <li><span><strong>Undo anything.</strong> Every change is saved in your history. Go back to any earlier version in one click.</span></li>
+        <li><span><strong>Honest about bigger jobs.</strong> Ask for online booking or a shop and Eagle tells you it's outside the plan, then writes it up as a job for your developer.</span></li>
+      </ul>
+    </div>
+    <div class="chat" aria-label="Example conversation with Eagle">
+      <div class="msg me">Change Sunday hours to 10-4</div>
+      <div class="msg ea"><b>Eagle</b>Here's the change to your opening hours on the homepage and contact page:
+        <div class="diff"><div class="old">Sunday: Closed</div><div class="new">Sunday: 10:00 - 16:00</div></div>
+        I'll also update your Google Business Profile so they match.
+        <div class="msg-actions"><span class="ap">Approve</span><span>Edit</span><span>Cancel</span></div>
+      </div>
+      <div class="msg me">Approve</div>
+      <span class="live">● Live on your website and Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPROVALS -->
+<section id="approve">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Approve, don't do</span>
+      <h2>Every week, a short list of smart actions</h2>
+      <p class="sub">Eagle keeps an eye on your reviews, your Google profile and what AI tools say about you, then drafts the work. You approve, tweak or skip on WhatsApp, or in the dashboard if you prefer.</p>
+    </div>
+    <div class="queue">
+      <div class="qcard">
+        <span class="qtype">Google review reply</span>
+        <h3>Reply to a 5-star review</h3>
+        <q>Thanks so much, Sarah - glad we got the heating back on before the cold snap.</q>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">AI-optimised content</span>
+        <h3>New page: "Boiler service in your town"</h3>
+        <p>ChatGPT recommends three competitors for this search, not you. This page answers the questions people ask.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Fix</span>
+        <h3>Correct your address everywhere</h3>
+        <p>Gemini still lists your old address. Eagle updates your site's business details and Google profile so AI tools pick up the right one.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">FAQ</span>
+        <h3>Add "Do you do emergency call-outs?"</h3>
+        <p>A question customers keep asking AI. Short answer drafted from your hours and services.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Social post</span>
+        <h3>Facebook, LinkedIn &amp; Google post</h3>
+        <p>"Winter boiler checks now booking" - one draft, adapted for each channel, scheduled when you approve.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Negative review</span>
+        <h3>Calm reply to a 2-star review</h3>
+        <p>Flagged straight away. Eagle drafts a polite reply that offers to sort it out offline.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Ask for reviews</span>
+        <h3>Review request for this week's customers</h3>
+        <p>A short message with your Google and Trustpilot links, plus a QR code for the van. Eagle never offers rewards for reviews or filters out unhappy customers.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">Alert</span>
+        <h3>A competitor just appeared in ChatGPT</h3>
+        <p>For "plumber in your town". Eagle has drafted a page and an FAQ so you're in the running too.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Edit</span><span>Skip</span></div>
+      </div>
+      <div class="qcard">
+        <span class="qtype">From your developer</span>
+        <h3>New quote form for bathroom refits</h3>
+        <p>Your developer proposed this change. You see the preview and decide - not the other way round.</p>
+        <div class="qbtns"><span class="ap">Approve</span><span>Ask a question</span><span>Skip</span></div>
+      </div>
+    </div>
+    <div class="channels"><span>WhatsApp</span><span>Dashboard</span><span>Email digest</span></div>
+  </div>
+</section>
+
+<!-- LEADS -->
+<section id="leads">
+  <div class="container split rev">
+    <div>
+      <span class="eyebrow">Leads &amp; enquiries</span>
+      <h2>Every enquiry in one place. <span>Three big buttons.</span></h2>
+      <p class="sub" style="margin-bottom:28px">Website forms, Google messages, WhatsApp and email all land in one simple list. Eagle sends each one to your WhatsApp: who it is, what they need and a drafted reply. You just pick what to do next.</p>
+      <ul class="check-list">
+        <li><span><strong>Call back, send reply or done.</strong> Every enquiry has the same three buttons. That's the whole process.</span></li>
+        <li><span><strong>A reply ready to send.</strong> Written from your prices, hours and the towns you cover. Send it as it is, or change it first.</span></li>
+        <li><span><strong>Nobody slips through.</strong> If an enquiry is still waiting at the end of the day, Eagle reminds you on WhatsApp.</span></li>
+        <li><span><strong>See what's working.</strong> How many enquiries came in this month, and whether they found you through your website, Google, a post - or by asking ChatGPT.</span></li>
+      </ul>
+    </div>
+    <div class="inbox" aria-label="Example enquiries inbox">
+      <div class="inbox-top"><strong>New enquiries</strong><span class="inbox-count">3 waiting</span></div>
+      <div class="lead urgent">
+        <div class="lead-head"><b>Leaking pipe</b><span class="chip c-no">Urgent</span></div>
+        <small>Website form · 8 min ago · "Water coming through the kitchen ceiling"</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="lead">
+        <div class="lead-head"><b>Boiler service quote</b><span class="chip c-warn">Quote</span></div>
+        <small>Google message · 1 hour ago · Reply drafted with your service price</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="lead">
+        <div class="lead-head"><b>Bathroom refit</b><span class="chip c-ok">New job</span></div>
+        <small>Website form · yesterday · Found you by asking ChatGPT · Would like a visit next week</small>
+        <div class="lead-btns"><span class="ap">Call back</span><span>Send reply</span><span>Done</span></div>
+      </div>
+      <div class="inbox-foot">This month: 14 enquiries · 7 from your website · 4 from Google · 2 via ChatGPT · 1 from Facebook</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section id="findings">
+  <div class="container split rev">
+    <div>
+      <span class="eyebrow">What AI says about you</span>
+      <h2>Real answers, not a made-up score</h2>
+      <p class="sub" style="margin-bottom:28px">Eagle runs WingLift's Wren audit every week and shows you exactly what ChatGPT, Claude and Gemini tell people about your business.</p>
+      <ul class="check-list">
+        <li><span><strong>Mentioned, not mentioned or wrong</strong> - for each AI tool.</span></li>
+        <li><span><strong>Word-for-word answers</strong>, so you see what customers see.</span></li>
+        <li><span><strong>Competitors named instead of you</strong>, and for which searches.</span></li>
+        <li><span><strong>Every finding turns into an action</strong> in your approval list.</span></li>
+      </ul>
+    </div>
+    <div class="report-card">
+      <div class="report-top"><strong>Weekly AI check</strong><span>Example</span></div>
+      <div class="ai-finding">
+        <div class="ai-head">ChatGPT <span class="chip c-no">Not mentioned</span></div>
+        <p>Names 3 competitors for "plumber in your town" - not you.</p>
+      </div>
+      <div class="ai-finding">
+        <div class="ai-head">Claude <span class="chip c-ok">Mentioned</span></div>
+        <p>"A family-run plumbing and heating firm known for fast boiler repairs…"</p>
+      </div>
+      <div class="ai-finding">
+        <div class="ai-head">Gemini <span class="chip c-warn">Inaccurate info</span></div>
+        <p>Lists your old address. Customers could turn up at the wrong door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OWN IT -->
+<section id="own">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">You own it</span>
+      <h2>Your site never belongs to us</h2>
+      <p class="sub">Eagle is the eye over your website, not a landlord. If you ever leave, your site keeps running.</p>
+    </div>
+    <div class="own-grid">
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.5 12a3.5 3.5 0 0 0 .5 7z"/></svg></div>
+        <h3>Your hosting</h3>
+        <p>Your developer puts the site on hosting in your name. Eagle only gets permission to publish what you approve - it never hosts or holds your site.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+        <h3>Your domain</h3>
+        <p>Your web address stays registered to you. Eagle never takes it over.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+        <h3>Your code</h3>
+        <p>Standard, clean code kept in your own GitHub account. Download it, or send it to any developer, any time.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Your say</h3>
+        <p>Nothing is published - not a word, not a reply, not a post - until you approve it.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Your history</h3>
+        <p>Every change is logged - "14 updates this year" - and any earlier version can be restored in one click.</p>
+      </div>
+      <div class="own">
+        <div class="own-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Your yearly report</h3>
+        <p>A plain-English site health report each year: what changed, what AI tools say about you now, and what came in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER -->
+<section id="developer">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">Bring your developer</span>
+      <h2>Your developer works for you again</h2>
+      <p class="sub" style="margin-bottom:28px">Invite your developer as a guest. They can run your move to the new site, see the technical details and propose bigger changes - and everything still comes to you for approval.</p>
+      <ul class="check-list">
+        <li><span><strong>Handles the launch</strong> if you'd rather they moved your domain.</span></li>
+        <li><span><strong>Sees the technical side:</strong> deploys, site health, and the fixes Eagle recommends.</span></li>
+        <li><span><strong>Proposes changes</strong> that land in your approval list.</span></li>
+        <li><span><strong>Takes jobs from you</strong> in the dashboard - "please fix the booking form" - so every website conversation is in one place.</span></li>
+        <li><span><strong>Switch developers in one click.</strong> Remove the old developer's access and send the new one an invite and a handover pack. Nothing is lost.</span></li>
+      </ul>
+    </div>
+    <div class="perm-card">
+      <div class="perm-row head"><span>Developer guest can…</span><span></span></div>
+      <div class="perm-row"><span>Put the site live on your hosting</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>See deploys, site health and technical fixes</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Propose changes and attach code</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Take jobs you assign</span><span class="yes">Yes</span></div>
+      <div class="perm-row"><span>Publish without your approval</span><span class="no">No</span></div>
+      <div class="perm-row"><span>See your customer enquiries</span><span class="no">No</span></div>
+      <div class="perm-row"><span>See billing</span><span class="no">No</span></div>
+      <div class="perm-row"><span>Keep access after you remove them</span><span class="no">No</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="compare">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Compare</span>
+      <h2>Eagle vs the usual options</h2>
+    </div>
+    <div class="compare" role="table" aria-label="Eagle compared with agencies and website builders">
+      <div class="cmp-row head" role="row"><div role="columnheader"></div><div role="columnheader">Agency or developer</div><div role="columnheader">Website builder</div><div role="columnheader">Eagle</div></div>
+      <div class="cmp-row" role="row"><div role="cell">A small change</div><div role="cell" data-l="Agency or developer">Email, wait, pay an invoice</div><div role="cell" data-l="Website builder">Log in and learn the editor</div><div role="cell" data-l="Eagle">Ask in plain English, approve, done</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Who owns the site</div><div role="cell" data-l="Agency or developer">Often unclear</div><div role="cell" data-l="Website builder">Locked into the platform</div><div role="cell" data-l="Eagle">You: your hosting, domain and code</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Found by ChatGPT, Claude, Gemini</div><div role="cell" data-l="Agency or developer">Rarely considered</div><div role="cell" data-l="Website builder">Up to you</div><div role="cell" data-l="Eagle">Built in and checked every week</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Reviews, enquiries, posts</div><div role="cell" data-l="Agency or developer">Separate jobs</div><div role="cell" data-l="Website builder">Extra apps</div><div role="cell" data-l="Eagle">One dashboard, approve in a tap</div></div>
+      <div class="cmp-row" role="row"><div role="cell">Your developer</div><div role="cell" data-l="Agency or developer">Holds the keys</div><div role="cell" data-l="Website builder">Not needed, or works around it</div><div role="cell" data-l="Eagle">A guest who works for you</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Pricing</span>
+      <h2>One plan. Everything included.</h2>
+      <p class="sub">No add-ons, no "pro" tier, no surprise invoices.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Eagle</div>
+      <div class="price-desc">For small businesses that want a great website without the hassle.</div>
+      <div class="price">€99 <small>/ month</small></div>
+      <ul>
+        <li>Run everything from WhatsApp</li>
+        <li>Your finished site - improved or brand new - ready for your developer</li>
+        <li>Vibe agent - change your site by chatting</li>
+        <li>Weekly approval list on WhatsApp and dashboard</li>
+        <li>Leads and enquiries inbox with drafted replies</li>
+        <li>Google review replies and review requests</li>
+        <li>AI-optimised content and FAQ manager</li>
+        <li>Social posts for Facebook, LinkedIn and Google</li>
+        <li>Weekly AI check of ChatGPT, Claude and Gemini</li>
+        <li>Developer guest access</li>
+      </ul>
+      <a href="/#cta" class="btn btn-navy">Get early access</a>
+      <p class="price-foot">Your developer arranges hosting in your name. Eagle doesn't host sites or charge for setup.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions owners ask</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I have to leave WordPress?</summary>
+        <p>No. You can start with Eagle connected to your existing WordPress site and switch to your new site later, or switch straight away. It's the same plan either way.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What can Eagle change on my WordPress site?</summary>
+        <p>Pages, posts and FAQs; your opening hours or phone number on every page at once; photos and their descriptions; menus; and SEO titles and descriptions. Every change can be undone through WordPress's own revision history. Eagle never touches your theme or plugin code, and anything involving your shop or prices always needs your approval.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why move off WordPress at all?</summary>
+        <p>A modern static site is faster, has far fewer plugins and updates to break, and is easier for Eagle and AI tools to read. Most small business sites don't need anything WordPress-specific.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who owns the hosting and the website?</summary>
+        <p>You do. Your developer puts the site on hosting in your name, your domain stays registered to you, and the code lives in your own GitHub account. If you cancel Eagle, the site keeps running.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who puts the site live?</summary>
+        <p>Your developer. Eagle sends them everything they need - the code, a launch guide and the redirect list - in one email you forward. Eagle doesn't do hosting or setup, so technical questions go to someone who knows your business.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why WhatsApp?</summary>
+        <p>Because you already use it all day. Eagle sends you what needs doing with simple buttons, and you can change your site just by texting. The dashboard is there when you want the full picture.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I already have a developer. Do I still need Eagle?</summary>
+        <p>Eagle does the day-to-day work - small edits, review replies, content, posts - so your developer can focus on the jobs that need them. Invite them as a guest and they can put the site live, see the technical details and propose changes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I change developer?</summary>
+        <p>Remove the old developer from your dashboard in one click and invite the new one. They get a handover pack with everything they need. Your site, code, history and Eagle stay exactly as they are.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I want something bigger, like online booking?</summary>
+        <p>Eagle handles content and everyday changes. If you ask for new functionality like booking or a shop, Eagle tells you it's outside the plan and writes it up as a clear job for your developer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will Eagle help me get more reviews?</summary>
+        <p>Yes. Eagle drafts review requests with your Google and Trustpilot links and gives you a QR code for in-person asks. It won't offer rewards for reviews or hide unhappy customers - that breaks Google's and Trustpilot's rules and could get your listing penalised.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I handle new enquiries?</summary>
+        <p>Every enquiry from your website, Google, WhatsApp and email shows up in one list with three buttons: call back, send reply or done. Eagle drafts the reply for you and reminds you if anyone is still waiting at the end of the day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to be good with computers?</summary>
+        <p>No. Eagle is built for busy owners, not techies: one screen, big buttons and plain English. If you can send a WhatsApp message, you can run Eagle.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can anything go live without me?</summary>
+        <p>No. Every change, page, reply and post waits for your approval, whether you approve it in the dashboard or on WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is Eagle different from Wren?</summary>
+        <p>Wren is WingLift's AI visibility audit: it tells you what AI tools say about your business. Eagle includes Wren's findings and goes further - it gives you a finished site and does the work to fix what Wren finds, with your approval.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you give me an "AI visibility score"?</summary>
+        <p>No. Scores hide what matters. Eagle shows you exactly what each AI tool says, what's wrong, which competitors appear instead of you, and what to do about it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>Take back control of your website.<br><span>Keep an Eagle&#8209;eye on it.</span></h2>
+    <p>A finished site you own, changes made by asking, every enquiry in one inbox and a short list of smart actions every week. €99 a month, everything included.</p>
+    <a href="/#cta" class="btn btn-gold">Get early access</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/eagle">Eagle</a></li>
+      <li><a href="/">WingLift</a></li>
+      <li><a href="/">Wren audit</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:info@winglift.io">Contact</a></li>
+    </ul>
+    <p class="footer-copy">Eagle is a WingLift product · © 2026 WingLift · Built in Dublin · Serving EU &amp; UK</p>
+    <p class="footer-legal">WingLift is a trading name of Shape Size or Form Ltd · Company No. 447780 · Registered in Dublin, Ireland · Registered office: Talent Garden, D.C.U. Alpha, Finglas Road Old, Dublin 11, D11 YNR2 · <a href="/privacy.html">Privacy &amp; Cookie Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
